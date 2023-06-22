@@ -15,8 +15,8 @@ const App = () => {
         <main className="content">
           <Switch>
             <Route exact path="/" component={HomePage} />
-            <Route path="/computer-science" component={BachCSPage} />
-            <Route path="/fundamentals" component={BachFIPage} />
+            <Route path="/bachelors/cs" component={BachCSPage} />
+            <Route path="/bachelors/fi" component={BachFIPage} />
             <Route path="/admission/application" component={() => {
               window.location.href = 'https://lk.mai.ru';
               return null;

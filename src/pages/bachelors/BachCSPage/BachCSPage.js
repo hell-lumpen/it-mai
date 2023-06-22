@@ -3,6 +3,7 @@ import React from 'react';
 const ComputerSciencePage = () => {
   return (
       <div className="container">
+        <h1 className="title" style={{color: '#007ACD'}}>01.03.00</h1>
         <h1 className="title">Компьютерные науки и прикладная математика</h1>
         <div className="content">
           <h3 className="section-title">О направлении</h3>

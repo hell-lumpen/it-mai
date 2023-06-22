@@ -47,7 +47,7 @@ const HomePage = () => {
   return (
       <div className="container">
         <h1 className="title">Институт №8</h1>
-        <h2 className="subtitle">Компьютерные науки и прикладная математика</h2>
+        <h1 className="subtitle">Компьютерные науки и прикладная математика</h1>
         <div className="content">
           <h3 className="section-title">О нас</h3>
           <p className="section-text">

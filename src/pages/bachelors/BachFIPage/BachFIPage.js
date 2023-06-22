@@ -3,6 +3,7 @@ import React from 'react';
 const FundamentalsPage = () => {
   return (
       <div className="container">
+        <h1 className="title" style={{color: '#007ACD'}}>02.03.02</h1>
         <h1 className="title">Фундаментальная информатика и информационные технологии</h1>
         <div className="content">
           <h3 className="section-title">О направлении</h3>

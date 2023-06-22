@@ -15,11 +15,11 @@ const Header = () => {
             <li className={`menu-item ${location.pathname === '/' ? 'active' : ''}`}>
               <Link to="/">Об институте</Link>
             </li>
-            <li className={`menu-item ${location.pathname === '/computer-science' ? 'active' : ''}`}>
-              <Link to="/computer-science">Компьютерные науки и прикладная математика</Link>
+            <li className={`menu-item ${location.pathname === '/bachelors/cs' ? 'active' : ''}`}>
+              <Link to="/bachelors/cs">Компьютерные науки и прикладная математика</Link>
             </li>
-            <li className={`menu-item ${location.pathname === '/fundamentals' ? 'active' : ''}`}>
-              <Link to="/fundamentals">Фундаментальная информатика и информационные технологии</Link>
+            <li className={`menu-item ${location.pathname === '/bachelors/fi' ? 'active' : ''}`}>
+              <Link to="/bachelors/fi">Фундаментальная информатика и информационные технологии</Link>
             </li>
             <li className={`menu-item ${location.pathname === '/admission/application' ? 'active' : ''}`}>
               <Link to="/admission/application">Подать заявку</Link>
