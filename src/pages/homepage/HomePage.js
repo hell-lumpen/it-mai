@@ -49,7 +49,7 @@ const HomePage = () => {
         <h1 className="title">Институт №8</h1>
         <h1 className="subtitle">Компьютерные науки и прикладная математика</h1>
         <div className="content">
-          <h3 className="section-title">О нас</h3>
+          <h2 className="section-title">О нас</h2>
           <p className="section-text">
             Институт №8 уже свыше полувека готовит умных и талантливых профи, которые успешно штурмуют сферу компьютерных наук и прикладной математики! Не упусти шанс вписать свое имя в нашу историю успеха!
           </p>
@@ -62,37 +62,42 @@ const HomePage = () => {
           <p className="section-text">
             Итак, готов к новым вызовам и бесконечным возможностям? Тогда добро пожаловать в Институт №8 - место, где твои мечты воплощаются в реальность!
           </p>
-          <h3 className="section-title">Наши направления</h3>
+          <h2 className="section-title">Наши направления</h2>
           <Highlight data={highlightsBachelor}/>
-          <h3 className="section-title">Преимущества обучения</h3>
+          <h2 className="section-title">Преимущества обучения</h2>
           <Highlight data={benefits}/>
-          <h3 className="section-title">Стек технологий выпускника</h3>
+          <h2 className="section-title">Стек технологий выпускника</h2>
           <p className="section-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu massa hendrerit, viverra risus eu, molestie dolor. Ut dictum fringilla justo, vitae tristique nulla sollicitudin vel. Donec a ultricies felis. Nulla facilisi. Phasellus eu sem at justo facilisis sollicitudin. Etiam volutpat efficitur velit, a tempor ante consequat in.
           </p>
-          <h3 className="section-title">Наши партнеры</h3>
+          <h2 className="section-title">Наши партнеры</h2>
           <p className="section-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam dolor eu pulvinar pretium. Vivamus sodales velit a libero eleifend, vitae posuere dolor sagittis. Vestibulum bibendum auctor quam, at posuere sapien gravida eu. Nullam maximus, enim et accumsan sollicitudin, mauris orci suscipit dui, ac consequat ligula nulla eu mi.
           </p>
-          <h3 className="section-title">Частые вопросы</h3>
+          <h2 className="section-title">Частые вопросы</h2>
           <FAQSection faqs={faqs}/>
-          <h3 className="section-title">Контакты</h3>
+          <h2 className="section-title">Контакты</h2>
           <div className="contact-block">
             <div className="text-block">
               <p className="section-text">
                 Свяжитесь с нами, чтобы получить дополнительную информацию о нас и наших направлениях подготовки. Мы всегда готовы ответить на ваши вопросы. Вы можете связаться с нами по телефону, электронной почте или через телеграм. Мы ждем вашего сообщения!
               </p>
               <p className="section-text">
-                Телефон приемной комиссии 8 Института МАИ: +7&nbsp;(499)&nbsp;158&nbsp;49&nbsp;77
+                Адрес приемной комиссии МАИ: <a href={'https://yandex.ru/maps/-/CCUDB-tEpD'} style={{textDecoration: 'none', color: '#fff'}}>125310, Москва, Волоколамское шоссе, 4к6, 3 этаж, комната 8</a>
               </p>
               <p className="section-text">
-                Электронная почта приемной комиссии 8 Института МАИ: <a href={'mailto:priem008@gmail.com'} style={{textDecoration: 'none', color: '#fff'}}>priem008@gmail.com</a>
+                Время работы:<br/>
+                Будни: 10:00 - 17:00<br/>
+                Суббота: 10:00 - 14:00<br/>
+              </p>
+              <p className="section-text">
+                Телефон приемной комиссии Института №8 МАИ: +7&nbsp;(499)&nbsp;158&nbsp;49&nbsp;77
+              </p>
+              <p className="section-text">
+                Электронная почта приемной комиссии Института №8 МАИ: <a href={'mailto:priem008@gmail.com'} style={{textDecoration: 'none', color: '#fff'}}>priem008@gmail.com</a>
               </p>
               <p className="section-text">
                 🔥Телеграм чат абитуриентов 2023🔥: <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#fff'}}>https://t.me/mai8inst</a>
-              </p>
-              <p className="section-text">
-                Адрес приемной комиссии МАИ: <a href={'https://yandex.ru/maps/-/CCUDB-tEpD'} style={{textDecoration: 'none', color: '#fff'}}>125310, Москва, Волоколамское шоссе, 4к6</a>
               </p>
               </div>
               <div className="map-block">

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Footer = () => {
-  return <footer>Разработано и оформлено в МАИ</footer>;
+  return <footer>&copy; 2023 МАИ</footer>;
 };
 
 export default Footer;
