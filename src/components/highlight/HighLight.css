@@ -1,0 +1,45 @@
+.highlights-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.highlight {
+    flex: 0 0 auto;
+    width: 310px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #414141;
+    border-radius: 8px;
+    position: relative;
+}
+
+.highlight-content {
+    margin: 15px;
+}
+
+.highlight-description {
+    padding-bottom: 10px;
+}
+
+.highlight-link {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    padding: 10px 0;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.highlight-link:hover {
+    background-color: #222;
+}
+
+@media (max-width: 480px) {
+    .highlight {
+        width: 100%;
+        margin-right: 0;
+    }
+}
