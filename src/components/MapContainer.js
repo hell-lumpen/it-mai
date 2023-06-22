@@ -10,7 +10,7 @@ const MapContainer = () => {
   const placemarkCoordinates = mapData.center; // Координаты точки
 
   return (
-      <YMaps query={{ apikey: '8d5cb0e3-0fdb-4747-b43b-041d2a0c7f6b\n' }}>
+      <YMaps query={{ apikey: '8d5cb0e3-0fdb-4747-b43b-041d2a0c7f6b' }}>
         <div style={{ width: '100%', height: 'auto' }}>
           <Map defaultState={mapData} width="100%" height="100%">
             <Placemark geometry={placemarkCoordinates} />
