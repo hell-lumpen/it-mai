@@ -134,8 +134,8 @@ h3 {
 
 .menu-item {
   margin: 10px;
-  max-width: 250px;
-  min-width: 200px;
+  max-width: 300px;
+  min-width: 180px;
   display: flex;
   align-items: center;
 }
@@ -224,16 +224,17 @@ footer {
 }
 
 .text-block {
-  width: 100%;
+  flex: 0 0 calc(50% - 10px); /* Ширина блока с текстом (50% минус отступы) */
   max-width: 500px;
+  margin-right: 10px; /* Отступ между блоками */
 }
 
 .map-block {
-  width: 100%;
+  flex: 0 0 calc(50% - 10px); /* Ширина блока с картой (50% минус отступы) */
   max-width: 500px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end; /* Выравнивание карты по правому краю */
+  align-items: flex-end;
 }
 
 @media (min-width: 1050px) {

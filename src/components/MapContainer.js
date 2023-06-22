@@ -8,7 +8,7 @@ const MapContainer = () => {
         <div style={{ width: '100%', height: '400px' }}>
           <Map
               defaultState={{ center: [55.810237, 37.498872], zoom: 14.5 }}
-              style={{ width: '500px', height: '400px' }}
+              style={{ width: '300px', height: '400px' }}
           >
             <Placemark geometry={[55.810237, 37.498872]} />
           </Map>
