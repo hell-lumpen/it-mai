@@ -5,9 +5,10 @@ import '../App.css'
 const MapContainer = () => {
   return (
       <YMaps query={{ apikey: '8d5cb0e3-0fdb-4747-b43b-041d2a0c7f6b' }}>
-        <div className={'map-block'}>
+        <div style={{ width: '100%', height: '400px' }}>
           <Map
               defaultState={{ center: [55.810237, 37.498872], zoom: 14.5 }}
+              style={{ width: '100%', height: '100%' }}
           >
             <Placemark geometry={[55.810237, 37.498872]} />
           </Map>
