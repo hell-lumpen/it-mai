@@ -224,15 +224,15 @@ footer {
 }
 
 .text-block {
-  max-width: 500px;
+  max-width: 100%;
   margin-right: 10px; /* Отступ между блоками */
 }
 
 .map-block {
-  max-width: 500px;
+  flex: 0 0 calc(50% - 10px); /* Ширина блока с картой (50% минус отступы) */
+  max-width: 100%;
+  margin-left: 10px;
   display: flex;
-  justify-content: flex-end; /* Выравнивание карты по правому краю */
-  align-items: flex-end;
 }
 
 @media (min-width: 1050px) {
