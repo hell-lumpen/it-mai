@@ -17,7 +17,10 @@
     background-position: inherit;
     background-repeat: inherit;
     background-size: inherit;
-    filter: blur(2px) grayscale(20%);
+    background: rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: inset 0px 0px 47px 3px #5e4e44;
+    -webkit-box-shadow: inset 0px 0px 47px 3px #574840;
+    box-shadow: inset 0px 0px 277px 3px #4c3f37;
 }
 
 .content {
@@ -30,13 +33,12 @@
 .centered-text {
     font-family: 'GothamPro-Black', sans-serif;
     color: #fff;
-    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; /* Настройка обводки */
+    /*text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; !* Настройка обводки *!*/
 }
 
 /* Медиа-запросы для узких экранов */
 @media (max-width: 767px) {
     .centered-text h1 {
-        font-family: 'GothamPro-Black', sans-serif;
         margin-left: 10px;
         margin-right: 10px;
         font-size: 200%;
@@ -47,7 +49,6 @@
 /* Медиа-запросы для широких экранов (минимальная ширина 768px) */
 @media (min-width: 768px) {
     .centered-text h1 {
-        font-family: 'GothamPro-Black', sans-serif;
         margin-left: 10px;
         margin-right: 10px;
         font-size: 500%;
