@@ -7,6 +7,20 @@
 }
 
 @font-face {
+  font-family: 'GothamPro-Bold';
+  src: url('../fonts/GothamPro-Bold.eot?') format('eot'),
+  url('../fonts/GothamPro-Bold.woff') format('woff'),
+  url('../fonts/GothamPro-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GothamPro-Medium';
+  src: url('../fonts/GothamPro-Medium.eot?') format('eot'),
+  url('../fonts/GothamPro-Medium.woff') format('woff'),
+  url('../fonts/GothamPro-Medium.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'GothamPro-Light';
   src: url('../fonts/GothamPro-Light.eot?') format('eot'),
   url('../fonts/GothamPro-Light.woff') format('woff'),
@@ -60,19 +74,19 @@ body {
 }
 
 h1 {
-  font-family: 'GothamPro-Black', sans-serif;
+  font-family: 'GothamPro-Medium', sans-serif;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 h2 {
-  font-family: 'GothamPro-Black', sans-serif;
+  font-family: 'GothamPro-Bold', sans-serif;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
 h3 {
-  font-family: 'GothamPro-Black', sans-serif;
+  font-family: 'GothamPro-Bold', sans-serif;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
