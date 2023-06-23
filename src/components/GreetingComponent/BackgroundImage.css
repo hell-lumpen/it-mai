@@ -2,13 +2,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 70vh; /* Минимальная высота контейнера */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /*filter: blur(3px);*/
-    /*opacity: 0.7;*/
+    min-height: 70vh;
+    position: relative;
 }
+
+.background-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: inherit;
+    background-position: inherit;
+    background-repeat: inherit;
+    background-size: inherit;
+    filter: blur(2px) grayscale(20%);
+}
+
+.content {
+    z-index: 1;
+    min-height: 78vh;
+}
+
+/* Rest of your CSS */
 
 .centered-text {
     font-family: 'GothamPro-Black', sans-serif;

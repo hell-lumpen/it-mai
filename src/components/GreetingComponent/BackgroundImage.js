@@ -46,7 +46,8 @@ class BackgroundImage extends React.Component {
     const { imageUrl, isLoading } = this.state;
 
     return (
-        <div className="background-image" style={{ backgroundImage: `url(${imageUrl})` }}>
+        <div className="background-image" style={{ backgroundImage: `url(${imageUrl})`}}>
+          <div className="blur"></div>
           <div className="content">
             {isLoading ? (
                 <div>Загрузка</div>
