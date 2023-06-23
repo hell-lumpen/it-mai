@@ -4,31 +4,28 @@
     align-items: center;
     min-height: 70vh;
     position: relative;
+    overflow: hidden; /* Add overflow property to prevent image overflow */
 }
 
 .background-image::before {
     content: "";
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
     background-image: inherit;
-    background-position: inherit;
-    background-repeat: inherit;
-    background-size: inherit;
-    background: rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: inset 0px 0px 47px 3px #5e4e44;
-    -webkit-box-shadow: inset 0px 0px 47px 3px #574840;
-    box-shadow: inset 0px 0px 277px 3px #4c3f37;
+    background-position: center; /* Set background position to center */
+    background-repeat: no-repeat; /* Remove background repeat */
+    background-size: cover; /* Scale and transform the image to cover the container */
+    filter: blur(3px) opacity(0.7);
+    -webkit-filter: blur(3px) opacity(0.7);
 }
 
 .content {
     z-index: 1;
     min-height: 78vh;
 }
-
-/* Rest of your CSS */
 
 .centered-text {
     font-family: 'GothamPro-Black', sans-serif;
