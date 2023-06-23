@@ -55,6 +55,10 @@ class BackgroundImage extends React.Component {
                 <div className="centered-text">
                   <h1>институт №8</h1>
                   <h1>компьютерные науки и прикладная математика</h1>
+                  <div className="button-container">
+                    <button className="button">узнать подробнее</button>
+                    <button className="button">связаться с нами</button>
+                  </div>
                 </div>
             )}
           </div>
