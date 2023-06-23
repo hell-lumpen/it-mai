@@ -19,6 +19,9 @@
 /* Медиа-запросы для узких экранов */
 @media (max-width: 767px) {
     .centered-text h1 {
+        font-family: 'GothamPro-Black', sans-serif;
+        margin-left: 10px;
+        margin-right: 10px;
         font-size: 200%;
         margin-bottom: 1rem;
     }
@@ -28,6 +31,8 @@
 @media (min-width: 768px) {
     .centered-text h1 {
         font-family: 'GothamPro-Black', sans-serif;
+        margin-left: 10px;
+        margin-right: 10px;
         font-size: 500%;
         margin-bottom: 1rem;
     }
