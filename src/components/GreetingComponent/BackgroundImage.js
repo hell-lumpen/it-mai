@@ -53,8 +53,8 @@ class BackgroundImage extends React.Component {
                 <div>Загрузка</div>
             ) : (
                 <div className="centered-text">
-                  <h1>Институт №8</h1>
-                  <h1>Компьютерные науки и прикладная математика</h1>
+                  <h1>институт №8</h1>
+                  <h1>компьютерные науки и прикладная математика</h1>
                 </div>
             )}
           </div>
