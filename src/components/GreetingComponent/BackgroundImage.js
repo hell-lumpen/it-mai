@@ -46,9 +46,17 @@ class BackgroundImage extends React.Component {
     const { imageUrl, isLoading } = this.state;
 
     return (
-        <div className="background-image">
-          {console.log(imageUrl)}
-          <img src={imageUrl} alt="Background" className="background-img" />
+        <div className="background-image" style={{ backgroundImage: `url(${imageUrl})` }}>
+          <div className="content">
+            {isLoading ? (
+                <div>Загрузка</div>
+            ) : (
+                <div className="centered-text">
+                  <h1>Институт №8</h1>
+                  <h1>Компьютерные науки и прикладная математика</h1>
+                </div>
+            )}
+          </div>
         </div>
     );
   }
