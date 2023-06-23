@@ -2,6 +2,7 @@ import React from 'react';
 import FAQSection from "../../components/faqsection/FAQSection";
 import Highlight from "../../components/highlight/Highlight";
 import MapContainer from "../../components/MapContainer";
+import BackgroundImage from "../../components/GreetingComponent/BackgroundImage";
 
 const HomePage = () => {
 
@@ -46,6 +47,7 @@ const HomePage = () => {
 
   return (
       <div className="container">
+        <BackgroundImage />
         <h1 className="title">Институт №8</h1>
         <h1 className="subtitle">Компьютерные науки и прикладная математика</h1>
         <div className="content">

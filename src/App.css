@@ -148,6 +148,7 @@ h3 {
 
 .menu-item {
   margin: 10px;
+  font-weight: bold;
   max-width: 300px;
   min-width: 180px;
   display: flex;
