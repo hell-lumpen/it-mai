@@ -14,7 +14,7 @@ class BackgroundImage extends React.Component {
     // Получите URL изображений для разных разрешений экрана из API или другого источника данных
     // В данном примере просто используются заглушки
     const wideImageUrl = 'https://dep805.ru/mai/6.jpg';
-    const narrowImageUrl = 'https://mai.ru/upload/iblock/bb6/obew2zeg77zswctaz3blpgul9pjzaxy9/khakaton3.jpg';
+    const narrowImageUrl = 'https://i.redd.it/nmen6jjd3yi21.jpg';
 
     // Создайте новые экземпляры Image, чтобы предварительно загрузить изображения
     const wideImg = new Image();
