@@ -18,8 +18,8 @@
     background-position: center; /* Set background position to center */
     background-repeat: no-repeat; /* Remove background repeat */
     background-size: cover; /* Scale and transform the image to cover the container */
-    filter: blur(3px) opacity(0.7);
-    -webkit-filter: blur(3px) opacity(0.7);
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
 }
 
 .content {
