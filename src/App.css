@@ -245,6 +245,7 @@ footer {
 }
 
 .map-block {
+  z-index: 1;
   flex: 0 0 calc(50% - 10px); /* Ширина блока с картой (50% минус отступы) */
   max-width: 100%;
   margin-left: 10px;
@@ -265,4 +266,50 @@ footer {
     order: 2;
     width: auto;
   }
+}
+
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background-color: #1E1E1E;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
+  max-width: 50%;
+  max-height: 50vh;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.cross-icon {
+  color: white;
+  font-size: 24px;
+  line-height: 1;
 }

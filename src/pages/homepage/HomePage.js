@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import FAQSection from "../../components/faqsection/FAQSection";
 import Highlight from "../../components/highlight/Highlight";
 import MapContainer from "../../components/MapContainer";
 import BackgroundImage from "../../components/GreetingComponent/BackgroundImage";
+import axios from "axios";
 
 const HomePage = () => {
 
@@ -45,8 +46,62 @@ const HomePage = () => {
     }
   ];
 
+  const [showPopup, setShowPopup] = useState(true);
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
+  const [popupData, setPopupData] = useState(null);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('/api/popup'); // Путь к вашему серверу и маршруту обработки запроса
+      const json = response.data;
+
+      if (json && Object.keys(json).length > 0) {
+        setPopupData(json);
+        setShowPopup(true);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
-      <div className="container">
+      <div className='container'>
+          <div style={{zIndex: 9999}}>
+          {showPopup && popupData && (
+              <div className="popup">
+                <div className="popup-content">
+                  <button className="close-btn" onClick={closePopup}>
+                    <span className="cross-icon">&#10005;</span>
+                  </button>
+                  <h2 style={{ color: '#000' }}>{popupData.title}</h2>
+                  <p style={{ color: '#000' }}>{popupData.description}</p>
+                  {popupData.date && <p style={{ color: '#000' }}>Date: {popupData.date}</p>}
+                  {popupData.image && <img src={popupData.image} alt="Popup Image" />}
+                </div>
+              </div>
+          )}{showPopup && !popupData && (
+            <div className="popup">
+              <div className="popup-content">
+                <button className="close-btn" onClick={closePopup}>
+                  <span className="cross-icon">&#10005;</span>
+                </button>
+                <h2 className='section-title' style={{ color: '#007ACD' }}>Привет, абитуриент!</h2>
+                <p className='section-text' style={{ color: '#fff' }}>Вступай в наш телеграм чат абитуриентов 2023, где можно получать оперативную информацию от приемной комиссии и задать вопрос Директору Института №8 Крылову Сергею Сергеевичу.</p>
+                <p className="section-text">
+                  <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#007ACD'}}>https://t.me/mai8inst</a>
+                </p>
+              </div>
+            </div>
+        )}
+        </div>
         <BackgroundImage />
         {/*<h1 className="title">Институт №8</h1>*/}
         {/*<h1 className="subtitle">Компьютерные науки и прикладная математика</h1>*/}
