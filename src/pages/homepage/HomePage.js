@@ -89,7 +89,11 @@ const HomePage = () => {
                   <p className="section-text">
                     Вступай в наш телеграм чат абитуриентов <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#007ACD', fontWeight: 'bold'}} target="_blank" rel="noopener noreferrer">https://t.me/mai8inst</a>
                   </p>
-                  {popupData.image && <img style={{height: 'auto', width: '80%'}} src={popupData.image} alt="Popup Image" />}
+                  {popupData.image &&
+                      <div style={{margin: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                        <img style={{height: 'auto', width: '80%'}} src={popupData.image} alt="Popup Image" />
+                      </div>
+                  }
                 </div>
               </div>
           )}{showPopup && !popupData && (
