@@ -81,11 +81,11 @@ const HomePage = () => {
                   <button className="close-btn" onClick={closePopup}>
                     <span className="cross-icon">&#10005;</span>
                   </button>
-                  <h2 style={{ color: '#000' }}>{popupData.title}</h2>
-                  <p style={{ color: '#000' }}>{popupData.description}</p>
-                  {popupData.date && <p style={{ color: '#000' }}>Дата мероприятия: {popupData.date}</p>}
-                  {popupData.link && <p style={{ color: '#000' }}>Ссылка на мероприятие: {popupData.link}</p>}
-                  {popupData.location && <p style={{ color: '#000' }}>Ссылка на мероприятие: {popupData.location}</p>}
+                  <h2 style={{ color: '#fff' }}>{popupData.title}</h2>
+                  <p style={{ color: '#fff' }}>{popupData.description}</p>
+                  {popupData.date && <p style={{ color: '#fff' }}>Дата мероприятия: {popupData.date}</p>}
+                  {popupData.link && <p style={{ color: '#fff' }}>Ссылка на мероприятие: {popupData.link}</p>}
+                  {popupData.location && <p style={{ color: '#fff' }}>Ссылка на мероприятие: {popupData.location}</p>}
                   <p className="section-text">
                     Вступай в наш телеграм чат абитуриентов <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#007ACD', fontWeight: 'bold'}} target="_blank" rel="noopener noreferrer">https://t.me/mai8inst</a>
                   </p>
