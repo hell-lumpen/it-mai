@@ -60,7 +60,7 @@ const HomePage = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://filimonov.org/images/event1.json'); // Путь к вашему серверу и маршруту обработки запроса
+      const response = await axios.get('https://filimonov.org/event1.json'); // Путь к вашему серверу и маршруту обработки запроса
       const json = response.data;
 
       if (json && Object.keys(json).length > 0) {
