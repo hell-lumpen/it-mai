@@ -296,6 +296,12 @@ footer {
   overflow: auto;
 }
 
+@media (max-width: 478px) {
+  .popup-content {
+    max-width: 80%;
+  }
+}
+
 .close-btn {
   position: absolute;
   top: 10px;
