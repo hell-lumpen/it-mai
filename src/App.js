@@ -14,13 +14,20 @@ const App = () => {
         <Header />
         <main className="content">
           <Switch>
-            <Route exact path="/" component={HomePage} />
+            <Route
+                exact
+                path="/"
+                render={() => <HomePage popupFrequency={0.01} />} // не чаще чем раз в час будет показываться сообщение
+            />
             <Route path="/bachelors/cs" component={BachCSPage} />
             <Route path="/bachelors/fi" component={BachFIPage} />
-            <Route path="/admission/application" component={() => {
-              window.location.href = 'https://lk.mai.ru';
-              return null;
-            }} />
+            <Route
+                path="/admission/application"
+                component={() => {
+                  window.location.href = 'https://lk.mai.ru';
+                  return null;
+                }}
+            />
             <Route path="*" component={NotFoundPage} />
           </Switch>
         </main>

@@ -83,8 +83,13 @@ const HomePage = () => {
                   </button>
                   <h2 style={{ color: '#000' }}>{popupData.title}</h2>
                   <p style={{ color: '#000' }}>{popupData.description}</p>
-                  {popupData.date && <p style={{ color: '#000' }}>Date: {popupData.date}</p>}
-                  {popupData.image && <img src={popupData.image} alt="Popup Image" />}
+                  {popupData.date && <p style={{ color: '#000' }}>Дата мероприятия: {popupData.date}</p>}
+                  {popupData.link && <p style={{ color: '#000' }}>Ссылка на мероприятие: {popupData.link}</p>}
+                  {popupData.location && <p style={{ color: '#000' }}>Ссылка на мероприятие: {popupData.location}</p>}
+                  <p className="section-text">
+                    Вступай в наш телеграм чат абитуриентов <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#007ACD', fontWeight: 'bold'}} target="_blank" rel="noopener noreferrer">https://t.me/mai8inst</a>
+                  </p>
+                  {popupData.image && <img style={{height: 'auto', width: '80%'}} src={popupData.image} alt="Popup Image" />}
                 </div>
               </div>
           )}{showPopup && !popupData && (
@@ -96,7 +101,7 @@ const HomePage = () => {
                 <h2 className='section-title' style={{ color: '#007ACD' }}>Привет, абитуриент!</h2>
                 <p className='section-text' style={{ color: '#fff' }}>Вступай в наш телеграм чат абитуриентов 2023, где можно получать оперативную информацию от приемной комиссии и задать вопрос Директору Института №8 Крылову Сергею Сергеевичу.</p>
                 <p className="section-text">
-                  <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#007ACD'}}>https://t.me/mai8inst</a>
+                  <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#007ACD', fontWeight: 'bold'}} target="_blank" rel="noopener noreferrer">https://t.me/mai8inst</a>
                 </p>
               </div>
             </div>
@@ -140,7 +145,7 @@ const HomePage = () => {
                 Свяжитесь с нами, чтобы получить дополнительную информацию о нас и наших направлениях подготовки. Мы всегда готовы ответить на ваши вопросы. Вы можете связаться с нами по телефону, электронной почте или через телеграм. Мы ждем вашего сообщения!
               </p>
               <p className="section-text">
-                Адрес приемной комиссии МАИ: <a href={'https://yandex.ru/maps/-/CCUDB-tEpD'} style={{textDecoration: 'none', color: '#fff'}}>125310, Москва, Волоколамское шоссе, 4к6, 3 этаж, комната 8</a>
+                Адрес приемной комиссии МАИ: <a href={'https://yandex.ru/maps/-/CCUDB-tEpD'} style={{textDecoration: 'none', color: '#fff'}} target="_blank" rel="noopener noreferrer">125310, Москва, Волоколамское шоссе, 4к6, 3 этаж, комната 8</a>
               </p>
               <p className="section-text">
                 Время работы:<br/>
@@ -151,10 +156,10 @@ const HomePage = () => {
                 Телефон приемной комиссии Института №8 МАИ: +7&nbsp;(499)&nbsp;158&nbsp;49&nbsp;77
               </p>
               <p className="section-text">
-                Электронная почта приемной комиссии Института №8 МАИ: <a href={'mailto:priem008@gmail.com'} style={{textDecoration: 'none', color: '#fff'}}>priem008@gmail.com</a>
+                Электронная почта приемной комиссии Института №8 МАИ: <a href={'mailto:priem008@gmail.com'} style={{textDecoration: 'none', color: '#fff'}} target="_blank" rel="noopener noreferrer">priem008@gmail.com</a>
               </p>
               <p className="section-text">
-                🔥Телеграм чат абитуриентов 2023🔥: <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#fff'}}>https://t.me/mai8inst</a>
+                🔥Телеграм чат абитуриентов 2023🔥: <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#fff'}} target="_blank" rel="noopener noreferrer">https://t.me/mai8inst</a>
               </p>
               </div>
               <div className="map-block">
