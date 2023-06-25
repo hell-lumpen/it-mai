@@ -2,6 +2,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    max-height: 80%;
+}
+
+.carousel-item .carousel-content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-item .carousel-content h3,
+.carousel-item .carousel-content p,
+.carousel-item .carousel-content a {
+    width: 100%;
 }
 
 .carousel-item {
