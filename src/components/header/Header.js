@@ -22,7 +22,7 @@ const Header = () => {
               <Link to="/bachelors/fi">Фундаментальная информатика и информационные технологии</Link>
             </li>
             <li className={`menu-item ${location.pathname === '/admission/application' ? 'active' : ''}`}>
-              <Link to="/admission/application">Подать заявку</Link>
+              <Link to="/admission/application">Поступление 2023</Link>
             </li>
           </ul>
         </nav>
