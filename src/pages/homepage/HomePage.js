@@ -76,6 +76,12 @@ const HomePage = () => {
 
   const carouselItems = [
     {
+      image: 'https://filimonov.org/images/homepage.jpg',
+      title: 'CES',
+      description: 'CES (Consumer Electronics Show) — одно из ведущих мероприятий в области потребительской электроники. Выставка CES привлекает компании и профессионалов из различных отраслей, представляющих новые продукты и инновации.',
+      link: 'https://www.ces.tech/',
+    },
+    {
       image: 'https://5play.ru/uploads/posts/2022-06/1654082098_2.webp',
       title: 'Web Summit',
       description: 'Web Summit — крупнейшая технологическая конференция в мире, которая собирает тысячи индустрийных лидеров, стартапов, инвесторов и журналистов. Она проходит ежегодно в Лиссабоне, Португалия.',
@@ -97,12 +103,6 @@ const HomePage = () => {
       title: 'DEF CON',
       description: 'DEF CON — одна из крупнейших международных конференций по компьютерной безопасности, которая собирает хакеров, исследователей и экспертов по информационной безопасности. DEF CON проводится ежегодно в Лас-Вегасе, США.',
       link: 'https://defcon.org/',
-    },
-    {
-      image: 'https://filimonov.org/images/homepage.jpg',
-      title: 'CES',
-      description: 'CES (Consumer Electronics Show) — одно из ведущих мероприятий в области потребительской электроники. Выставка CES привлекает компании и профессионалов из различных отраслей, представляющих новые продукты и инновации.',
-      link: 'https://www.ces.tech/',
     },
   ];
 
@@ -166,8 +166,8 @@ const HomePage = () => {
         )}
         </div>
         {/*<BackgroundImage />*/}
-        {/*<h1 className="title" style={{color: "#007ACD"}}>Институт №8</h1>*/}
-        {/*<h1 className="subtitle">Компьютерные науки и прикладная математика</h1>*/}
+        <h1 className="title" style={{color: "#007ACD"}}>Институт №8</h1>
+        <h1 className="subtitle">Компьютерные науки и прикладная математика</h1>
         <CarouselComponent items={carouselItems} settings={carouselSettings} />
         <div className="content">
           <h2 className="section-title">О нас</h2>
