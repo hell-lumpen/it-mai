@@ -8,6 +8,7 @@ import BachFIPage from "./pages/bachelors/BachFIPage/BachFIPage";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import NotFoundPage from "./pages/notfoundpage/NotFoundPage";
+import AdmissionPage from "./pages/admissionpage/AdmissionPage";
 
 const ScrollToTop = ({ history }) => {
   useEffect(() => {
@@ -80,10 +81,14 @@ const App = ({ history }) => {
             />
             <Route
                 path="/admission/application"
-                component={() => {
-                  window.location.href = 'https://lk.mai.ru';
-                  return null;
-                }}
+                render={() => (
+                    <>
+                      <Helmet>
+                        <title>Институт №8 МАИ | Поступление 2023</title>
+                      </Helmet>
+                      <AdmissionPage />
+                    </>
+                )}
             />
             <Route
                 path="*"
