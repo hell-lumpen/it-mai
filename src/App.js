@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import HomePage from './pages/homepage/HomePage';
 import './App.css';
 import BachCSPage from "./pages/bachelors/BachCSPage/BachCSPage";
@@ -11,16 +12,46 @@ import NotFoundPage from "./pages/notfoundpage/NotFoundPage";
 const App = () => {
   return (
       <div className="app">
+        <Helmet>
+          <title>Институт №8 МАИ</title>
+        </Helmet>
         <Header />
         <main className="content">
           <Switch>
             <Route
                 exact
                 path="/"
-                render={() => <HomePage popupFrequency={0.01} />} // не чаще чем раз в час будет показываться сообщение
+                render={() => (
+                    <>
+                      <Helmet>
+                        <title>Институт №8 МАИ | Главная</title>
+                      </Helmet>
+                      <HomePage />
+                    </>
+                )}
             />
-            <Route path="/bachelors/cs" component={BachCSPage} />
-            <Route path="/bachelors/fi" component={BachFIPage} />
+            <Route
+                path="/bachelors/cs"
+                render={() => (
+                    <>
+                      <Helmet>
+                        <title>Институт №8 МАИ | Компьютерные науки и прикладная математика</title>
+                      </Helmet>
+                      <BachCSPage />
+                    </>
+                )}
+            />
+            <Route
+                path="/bachelors/fi"
+                render={() => (
+                    <>
+                      <Helmet>
+                        <title>Институт №8 МАИ | Фундаментальная информатика и информационные технологии</title>
+                      </Helmet>
+                      <BachFIPage />
+                    </>
+                )}
+            />
             <Route
                 path="/admission/application"
                 component={() => {
@@ -28,7 +59,17 @@ const App = () => {
                   return null;
                 }}
             />
-            <Route path="*" component={NotFoundPage} />
+            <Route
+                path="*"
+                render={() => (
+                    <>
+                      <Helmet>
+                        <title>404. Страница не найдена</title>
+                      </Helmet>
+                      <NotFoundPage />
+                    </>
+                )}
+            />
           </Switch>
         </main>
         <Footer />

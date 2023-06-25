@@ -1,8 +1,17 @@
 import React from 'react';
+import {Helmet} from "react-helmet";
 
 const ComputerSciencePage = () => {
+
+  const description = "Конкурсная группа 01.03.00 'Компьютерные науки и прикладная математика' предлагает два увлекательных направления: 'Прикладная математика' и 'Прикладная математика и информатика'. Здесь студенты получают возможность развивать свои навыки в компьютерных науках и математике.";
+  const keywords = "Конкурсная группа 01.03.00, Компьютерные науки, Прикладная математика, Прикладная математика и информатика, математическое моделирование, анализ данных, оптимизация, программирование, информационные технологии, научные исследования, IT-индустрия, финансы";
+
   return (
       <div className="container">
+        <Helmet>
+          <meta name="description" content={description} />
+          <meta name="keywords" content={keywords} />
+        </Helmet>
         <h1 className="title" style={{color: '#007ACD'}}>01.03.00</h1>
         <h1 className="title">Компьютерные науки и прикладная математика</h1>
         <div className="content">

@@ -4,6 +4,7 @@ import Highlight from "../../components/highlight/Highlight";
 import MapContainer from "../../components/MapContainer";
 import BackgroundImage from "../../components/GreetingComponent/BackgroundImage";
 import axios from "axios";
+import {Helmet} from "react-helmet";
 
 const HomePage = () => {
 
@@ -60,7 +61,7 @@ const HomePage = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://filimonov.org/event3.json'); // Путь к вашему серверу и маршруту обработки запроса
+      const response = await axios.get('https://filimonov.org/event2.json'); // Путь к вашему серверу и маршруту обработки запроса
       const json = response.data;
 
       if (json && Object.keys(json).length > 0) {
@@ -72,8 +73,15 @@ const HomePage = () => {
     }
   };
 
+  const description = "Институт №8 «Компьютерные науки и прикладная математика» — признанная в России и за рубежом научная математическая и IT-школа. Уже более полувека мы готовим талантливых профессионалов, которые успешно применяют свои знания в различных областях, включая IT, финансы, робототехнику, экономику, авиацию, космонавтику и другие востребованные направления.";
+  const keywords = "Институт №8, Компьютерные науки, Прикладная математика, IT-школа, профессионалы, образование, IT, финансы, робототехника, экономика, авиация, космонавтика, научные исследования, преподаватели, высокотехнологичные компании, студенты, научные мероприятия, карьера";
+
   return (
       <div className='container'>
+        <Helmet>
+          <meta name="description" content={description} />
+          <meta name="keywords" content={keywords} />
+        </Helmet>
           <div style={{zIndex: 9999}}>
           {showPopup && popupData && (
               <div className="popup">
@@ -111,9 +119,9 @@ const HomePage = () => {
             </div>
         )}
         </div>
-        <BackgroundImage />
-        {/*<h1 className="title">Институт №8</h1>*/}
-        {/*<h1 className="subtitle">Компьютерные науки и прикладная математика</h1>*/}
+        {/*<BackgroundImage />*/}
+        <h1 className="title" style={{color: "#007ACD"}}>Институт №8</h1>
+        <h1 className="subtitle">Компьютерные науки и прикладная математика</h1>
         <div className="content">
           <h2 className="section-title">О нас</h2>
           <p className="section-text">
@@ -148,7 +156,7 @@ const HomePage = () => {
                 Свяжитесь с нами, чтобы получить дополнительную информацию о нас и наших направлениях подготовки. Мы всегда готовы ответить на ваши вопросы. Вы можете связаться с нами по телефону, электронной почте или через телеграм. Мы ждем вашего сообщения!
               </p>
               <p className="section-text">
-                Адрес приемной комиссии МАИ: <a href={'https://yandex.ru/maps/-/CCUDB-tEpD'} style={{textDecoration: 'none', color: '#fff'}} target="_blank" rel="noopener noreferrer">125310, Москва, Волоколамское шоссе, 4к6, 3 этаж, комната 8</a>
+                Адрес приемной комиссии МАИ: <a href={'https://yandex.ru/maps/-/CCUDB-tEpD'} style={{textDecoration: 'none', color: '#007ACD'}} target="_blank" rel="noopener noreferrer">125310, Москва, Волоколамское шоссе, 4к6, 3 этаж, комната 8.</a>
               </p>
               <p className="section-text">
                 Время работы:<br/>
@@ -156,13 +164,13 @@ const HomePage = () => {
                 Суббота: 10:00 - 14:00<br/>
               </p>
               <p className="section-text">
-                Телефон приемной комиссии Института №8 МАИ: +7&nbsp;(499)&nbsp;158&nbsp;49&nbsp;77
+                Телефон приемной комиссии Института №8 МАИ: <a href={'tel:+74991584977'} style={{textDecoration: 'none', color: '#007ACD'}} target="_blank" rel="noopener noreferrer">7&nbsp;(499)&nbsp;158&nbsp;49&nbsp;77</a>
               </p>
               <p className="section-text">
-                Электронная почта приемной комиссии Института №8 МАИ: <a href={'mailto:priem008@gmail.com'} style={{textDecoration: 'none', color: '#fff'}} target="_blank" rel="noopener noreferrer">priem008@gmail.com</a>
+                Электронная почта приемной комиссии Института №8 МАИ: <a href={'mailto:priem008@gmail.com'} style={{textDecoration: 'none', color: '#007ACD'}} target="_blank" rel="noopener noreferrer">priem008@gmail.com</a>
               </p>
               <p className="section-text">
-                🔥Телеграм чат абитуриентов 2023🔥: <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#fff'}} target="_blank" rel="noopener noreferrer">https://t.me/mai8inst</a>
+                🔥Телеграм чат абитуриентов 2023🔥: <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#007ACD'}} target="_blank" rel="noopener noreferrer">https://t.me/mai8inst</a>
               </p>
               </div>
               <div className="map-block">
