@@ -1,4 +1,5 @@
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import './HighLight.css';
 
 const Highlight = ({ data }) => {
@@ -21,19 +22,29 @@ const Highlight = ({ data }) => {
 
   return (
       <div className="highlights-container">
-        {data.map(({ title, description, link }, index) => (
-            <div
-                key={index}
-                className={`highlight ${tileCount === 1 ? 'single' : 'double'}`}
-                onClick={() => handleHighlightClick(link)}
-                style={link ? { cursor: 'pointer' } : null}
-            >
-              <div className="highlight-content">
-                <h3 className="highlight-title">{title}</h3>
-                <p className="highlight-description">{description}</p>
+        {data.map(({ title, description, link }, index) => {
+          // eslint-disable-next-line react-hooks/rules-of-hooks
+          const [ref, inView] = useInView({
+            triggerOnce: true, // Trigger animation only once
+          });
+
+          return (
+              <div
+                  key={index}
+                  className={`highlight ${tileCount === 1 ? 'single' : 'double'} ${
+                      inView ? 'highlight-appear' : ''
+                  }`}
+                  ref={ref}
+                  onClick={() => handleHighlightClick(link)}
+                  style={link ? { cursor: 'pointer' } : null}
+              >
+                <div className="highlight-content">
+                  <h3 className="highlight-title">{title}</h3>
+                  <p className="highlight-description">{description}</p>
+                </div>
               </div>
-            </div>
-        ))}
+          );
+        })}
       </div>
   );
 };

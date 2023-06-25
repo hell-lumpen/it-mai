@@ -5,6 +5,21 @@
     margin: 20px;
 }
 
+@keyframes highlight-appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.highlight-appear {
+    animation: highlight-appear 1s ease-in-out forwards;
+}
+
 .highlight {
     flex: 0 0 auto;
     width: 310px;

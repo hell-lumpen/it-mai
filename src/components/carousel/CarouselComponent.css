@@ -1,7 +1,5 @@
 .carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 65vh;
 }
 
 .carousel-item {
@@ -30,6 +28,9 @@
 }
 
 @media (max-width: 767px) {
+    .carousel {
+        height: 100vh;
+    }
     .carousel-item {
         flex-direction: column;
         align-items: center;

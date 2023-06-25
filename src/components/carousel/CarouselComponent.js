@@ -6,6 +6,7 @@ import './CarouselComponent.css'; // Импортируйте файл со ст
 
 const CarouselComponent = ({ items, settings }) => {
   return (
+      <div className='carousel'>
       <Carousel {...settings}>
             {items.map((item, index) => (
             <div key={index} className="carousel-item">
@@ -22,6 +23,7 @@ const CarouselComponent = ({ items, settings }) => {
             </div>
         ))}
       </Carousel>
+      </div>
   );
 };
 
