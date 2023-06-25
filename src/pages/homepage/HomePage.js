@@ -5,6 +5,7 @@ import MapContainer from "../../components/MapContainer";
 import BackgroundImage from "../../components/GreetingComponent/BackgroundImage";
 import axios from "axios";
 import {Helmet} from "react-helmet";
+import CarouselComponent from "../../components/carousel/CarouselComponent";
 
 const HomePage = () => {
 
@@ -73,6 +74,51 @@ const HomePage = () => {
     }
   };
 
+  const carouselItems = [
+    {
+      image: 'https://5play.ru/uploads/posts/2022-06/1654082098_2.webp',
+      title: 'Web Summit',
+      description: 'Web Summit — крупнейшая технологическая конференция в мире, которая собирает тысячи индустрийных лидеров, стартапов, инвесторов и журналистов. Она проходит ежегодно в Лиссабоне, Португалия.',
+      link: 'https://websummit.com/',
+    },
+    {
+      image: 'https://5play.ru/uploads/posts/2022-06/1654082098_2.webp',
+      title: 'WWDC',
+      description: 'WWDC (Worldwide Developers Conference) — ежегодное мероприятие, организованное Apple, на котором компания представляет новые продукты, технологии и программное обеспечение. WWDC привлекает разработчиков со всего мира. ',
+      link: 'https://developer.apple.com/wwdc/',
+    },
+    {
+      title: 'Google I/O',
+      description: 'Google I/O — ежегодная конференция, проводимая Google, на которой компания представляет свои новейшие продукты, инструменты разработки и технологии. Конференция открыта для разработчиков и всего сообщества Google.',
+      link: 'https://events.google.com/io/',
+    },
+    {
+      image: 'https://5play.ru/uploads/posts/2022-06/1654082098_2.webp',
+      title: 'DEF CON',
+      description: 'DEF CON — одна из крупнейших международных конференций по компьютерной безопасности, которая собирает хакеров, исследователей и экспертов по информационной безопасности. DEF CON проводится ежегодно в Лас-Вегасе, США.',
+      link: 'https://defcon.org/',
+    },
+    {
+      image: 'https://filimonov.org/images/homepage.jpg',
+      title: 'CES',
+      description: 'CES (Consumer Electronics Show) — одно из ведущих мероприятий в области потребительской электроники. Выставка CES привлекает компании и профессионалов из различных отраслей, представляющих новые продукты и инновации.',
+      link: 'https://www.ces.tech/',
+    },
+  ];
+
+
+  const carouselSettings = {
+    showArrows: false,
+    showStatus: false,
+    showIndicators: true,
+    showThumbs: false,
+    autoPlay: true,
+    infiniteLoop: true,
+    interval: 3000,
+    transitionTime: 500,
+    // Дополнительные настройки карусели по необходимости
+  };
+
   const description = "Институт №8 «Компьютерные науки и прикладная математика» — признанная в России и за рубежом научная математическая и IT-школа. Уже более полувека мы готовим талантливых профессионалов, которые успешно применяют свои знания в различных областях, включая IT, финансы, робототехнику, экономику, авиацию, космонавтику и другие востребованные направления.";
   const keywords = "Институт №8, Компьютерные науки, Прикладная математика, IT-школа, профессионалы, образование, IT, финансы, робототехника, экономика, авиация, космонавтика, научные исследования, преподаватели, высокотехнологичные компании, студенты, научные мероприятия, карьера";
 
@@ -120,8 +166,9 @@ const HomePage = () => {
         )}
         </div>
         {/*<BackgroundImage />*/}
-        <h1 className="title" style={{color: "#007ACD"}}>Институт №8</h1>
-        <h1 className="subtitle">Компьютерные науки и прикладная математика</h1>
+        {/*<h1 className="title" style={{color: "#007ACD"}}>Институт №8</h1>*/}
+        {/*<h1 className="subtitle">Компьютерные науки и прикладная математика</h1>*/}
+        <CarouselComponent items={carouselItems} settings={carouselSettings} />
         <div className="content">
           <h2 className="section-title">О нас</h2>
           <p className="section-text">
