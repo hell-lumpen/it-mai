@@ -67,6 +67,9 @@ body::-webkit-scrollbar-thumb:vertical {
 
 body {
   background-color: #1e1e1e;
+  /*background-image: url('../src/assets/images/60284.jpg');*/
+  /*backdrop-filter: brightness(10%);*/
+  background-repeat: repeat;
   color: #fff;
   font-family: 'GothamPro-Light', sans-serif;
   margin: 0;
