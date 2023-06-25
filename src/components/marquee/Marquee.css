@@ -1,0 +1,25 @@
+.marquee-item img {
+    max-height: 50px;
+}
+
+.marquee-container {
+    overflow: hidden;
+}
+
+.marquee {
+    display: flex;
+    animation: marquee 60s linear infinite;
+}
+
+.marquee-item {
+    padding: 0 10px;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

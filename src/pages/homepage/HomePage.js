@@ -6,6 +6,7 @@ import BackgroundImage from "../../components/GreetingComponent/BackgroundImage"
 import axios from "axios";
 import {Helmet} from "react-helmet";
 import CarouselComponent from "../../components/carousel/CarouselComponent";
+import Marquee from "../../components/marquee/Marquee";
 
 const HomePage = () => {
 
@@ -119,6 +120,15 @@ const HomePage = () => {
     // Дополнительные настройки карусели по необходимости
   };
 
+  const logos = [
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/800px-Apple_logo_black.svg.png',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/800px-Apple_logo_black.svg.png',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/800px-Apple_logo_black.svg.png',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1920px-Google_2015_logo.svg.png',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1920px-Google_2015_logo.svg.png',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1920px-Google_2015_logo.svg.png',
+  ];
+
   const description = "Институт №8 «Компьютерные науки и прикладная математика» — признанная в России и за рубежом научная математическая и IT-школа. Уже более полувека мы готовим талантливых профессионалов, которые успешно применяют свои знания в различных областях, включая IT, финансы, робототехнику, экономику, авиацию, космонавтику и другие востребованные направления.";
   const keywords = "Институт №8, Компьютерные науки, Прикладная математика, IT-школа, профессионалы, образование, IT, финансы, робототехника, экономика, авиация, космонавтика, научные исследования, преподаватели, высокотехнологичные компании, студенты, научные мероприятия, карьера";
 
@@ -193,9 +203,7 @@ const HomePage = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu massa hendrerit, viverra risus eu, molestie dolor. Ut dictum fringilla justo, vitae tristique nulla sollicitudin vel. Donec a ultricies felis. Nulla facilisi. Phasellus eu sem at justo facilisis sollicitudin. Etiam volutpat efficitur velit, a tempor ante consequat in.
           </p>
           <h2 className="section-title">Наши партнеры</h2>
-          <p className="section-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam dolor eu pulvinar pretium. Vivamus sodales velit a libero eleifend, vitae posuere dolor sagittis. Vestibulum bibendum auctor quam, at posuere sapien gravida eu. Nullam maximus, enim et accumsan sollicitudin, mauris orci suscipit dui, ac consequat ligula nulla eu mi.
-          </p>
+          <Marquee logos={logos} />
           <h2 className="section-title">Частые вопросы</h2>
           <FAQSection faqs={faqs}/>
           <h2 className="section-title">Контакты</h2>
