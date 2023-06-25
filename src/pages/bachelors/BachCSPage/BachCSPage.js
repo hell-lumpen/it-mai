@@ -46,10 +46,6 @@ const ComputerSciencePage = () => {
           <p className="section-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id venenatis eros. Suspendisse potenti. Sed nec massa ipsum. Integer nec quam eu diam facilisis volutpat. Morbi non leo arcu. Sed eleifend diam vel congue finibus. Praesent commodo, justo a efficitur lacinia, velit erat elementum enim, vel eleifend nisi nulla in elit.
           </p>
-          <h3 className="section-title">Наши партнеры</h3>
-          <p className="section-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam dolor eu pulvinar pretium. Vivamus sodales velit a libero eleifend, vitae posuere dolor sagittis. Vestibulum bibendum auctor quam, at posuere sapien gravida eu. Nullam maximus, enim et accumsan sollicitudin, mauris orci suscipit dui, ac consequat ligula nulla eu mi.
-          </p>
           <h3 className="section-title">Проходные баллы</h3>
           <p className="section-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu massa hendrerit, viverra risus eu, molestie dolor. Ut dictum fringilla justo, vitae tristique nulla sollicitudin vel. Donec a ultricies felis. Nulla facilisi. Phasellus eu sem at justo facilisis sollicitudin. Etiam volutpat efficitur velit, a tempor ante consequat in.

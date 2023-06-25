@@ -1,5 +1,5 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import HomePage from './pages/homepage/HomePage';
 import './App.css';
@@ -9,7 +9,32 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import NotFoundPage from "./pages/notfoundpage/NotFoundPage";
 
-const App = () => {
+const ScrollToTop = ({ history }) => {
+  useEffect(() => {
+    const scrollPositions = {};
+
+    const handleScroll = () => {
+      scrollPositions[history.location.pathname] = window.scrollY;
+    };
+
+    const restoreScrollPosition = () => {
+      const { pathname } = history.location;
+      const scrollPosition = scrollPositions[pathname] || 0;
+      setTimeout(() => window.scrollTo(0, scrollPosition), 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    history.listen(restoreScrollPosition);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [history]);
+
+  return null;
+};
+
+const App = ({ history }) => {
   return (
       <div className="app">
         <Helmet>
@@ -17,6 +42,7 @@ const App = () => {
         </Helmet>
         <Header />
         <main className="content">
+          <ScrollToTop history={history} />
           <Switch>
             <Route
                 exact
@@ -77,4 +103,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default withRouter(App);
