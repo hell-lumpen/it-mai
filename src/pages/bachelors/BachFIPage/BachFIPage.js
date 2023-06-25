@@ -15,6 +15,7 @@ const FundamentalsPage = () => {
         <h1 className="title">Фундаментальная информатика и информационные технологии</h1>
         <div className="content">
           <h3 className="section-title">О направлении</h3>
+          <div style={{background: '#141414', borderRadius: '25px', padding: '20px'}}>
           <p className="section-text">
             Студенты направления 02.03.02 "Фундаментальная информатика и информационные технологии" получают глуюокие и обширные знания, охватывающие различные области, включая прикладную математику, общетеоретическую информатику и инновационные информационные технологии. Это обеспечит выпускникам возможность применять свои навыки в разнообразных сферах, включая интеллектуальные системы, вычислительные технологии, компьютерные науки, технологии баз данных, компьютерную графику, теорию информации, управление информационно-коммуникационными системами и бизнес-процессами, архитектуру программного обеспечения, параллельное и распределенное вычисление.          </p>
           <p className="section-text">
@@ -26,6 +27,7 @@ const FundamentalsPage = () => {
           <p className="section-text">
             Выпускники могут строить успешную карьеру в различных сферах, включая программирование, разработку приложений, управление базами данных, аналитику данных, исследования в области искусственного интеллекта, а также заниматься научной и инновационной деятельностью. Благодаря сильной теоретической подготовке и практическим навыкам, выпускники могут эффективно адаптироваться к быстро меняющимся требованиям IT-сектора и достигать успеха в своей профессиональной карьере.
           </p>
+          </div>
           <h3 className="section-title">Преимущества обучения</h3>
           <p className="section-text">
             Sed nec pharetra dui, sit amet cursus ex. Sed ac ante vel mi sagittis aliquam eu at velit. Sed condimentum metus ac metus vulputate, at fringilla metus consequat. Sed mattis tempor ligula, ac varius nisl lobortis sed. Proin semper odio id tortor rhoncus ullamcorper. Sed id metus in sem sollicitudin cursus. Donec a dui dictum, malesuada arcu ac, tincidunt ipsum.

@@ -2,19 +2,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    max-height: 80%;
-}
-
-.carousel-item .carousel-content {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-}
-
-.carousel-item .carousel-content h3,
-.carousel-item .carousel-content p,
-.carousel-item .carousel-content a {
-    width: 100%;
 }
 
 .carousel-item {
@@ -28,14 +15,18 @@
 }
 
 .carousel-item .carousel-image img {
-    max-height: 90%;
     display: flex;
     object-fit: contain;
     margin: 0 auto; /* Отцентрирование изображения по горизонтали */
+    border-radius: 25px;
 }
 
 .carousel-item .carousel-content {
     flex: 2; /* Изменен flex-параметр для текстового контента */
+    background-color: #141414;
+    border-radius: 25px;
+    padding: 10px;
+    width: 100%;
 }
 
 @media (max-width: 767px) {
@@ -51,7 +42,7 @@
 
     .carousel-item .carousel-image img {
         max-width: 100%; /* Ограничение ширины изображения до 100% объекта карусели на узких экранах */
-        max-height: 50%; /* Ограничение высоты изображения до 50% высоты объекта карусели на узких экранах */
+        max-height: 40%; /* Ограничение высоты изображения до 50% высоты объекта карусели на узких экранах */
         margin: 0 auto; /* Отцентрирование изображения по горизонтали */
     }
 

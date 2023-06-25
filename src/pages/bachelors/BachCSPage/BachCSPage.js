@@ -16,6 +16,7 @@ const ComputerSciencePage = () => {
         <h1 className="title">Компьютерные науки и прикладная математика</h1>
         <div className="content">
           <h3 className="section-title">О направлении</h3>
+          <div style={{background: '#141414', borderRadius: '25px', padding: '20px'}}>
           <p className="section-text">
             Конкурсная группа 01.03.00 "Компьютерные науки и прикладная математика" предлагает два направления: "Прикладная математика" и "Прикладная математика и информатика". Здесь студенты получают возможность развивать свои навыки в информационных технологях и математике.
           </p>
@@ -34,6 +35,7 @@ const ComputerSciencePage = () => {
           <p className="section-text">
             Программа подготовки специалистов по компьютерным наукам и прикладной математике создана для тех, кто стремится к развитию в современных технологиях и хочет применять свои знания на практике. Здесь студенты получат все необходимые инструменты и знания для успешной карьеры в области информационных технологий и научных исследований.
           </p>
+          </div>
           <h3 className="section-title">Преимущества обучения</h3>
           <p className="section-text">
             Sed nec pharetra dui, sit amet cursus ex. Sed ac ante vel mi sagittis aliquam eu at velit. Sed condimentum metus ac metus vulputate, at fringilla metus consequat. Sed mattis tempor ligula, ac varius nisl lobortis sed. Proin semper odio id tortor rhoncus ullamcorper. Sed id metus in sem sollicitudin cursus. Donec a dui dictum, malesuada arcu ac, tincidunt ipsum.
