@@ -38,7 +38,7 @@ const Highlight = ({ data }) => {
                   onClick={() => handleHighlightClick(link)}
                   style={link ? { cursor: 'pointer' } : null}
               >
-                <div className="highlight-content">
+                <div className="highlight-content-h">
                   <h3 className="highlight-title">{title}</h3>
                   <p className="highlight-description">{description}</p>
                 </div>

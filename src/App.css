@@ -316,3 +316,10 @@ footer {
   font-size: 24px;
   line-height: 1;
 }
+
+
+.highlight-content {
+  background-color: #141414;
+  border-radius: 25px;
+  padding: 20px;
+}

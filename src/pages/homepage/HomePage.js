@@ -1,20 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import FAQSection from "../../components/faqsection/FAQSection";
 import Highlight from "../../components/highlight/Highlight";
-import MapContainer from "../../components/MapContainer";
-import BackgroundImage from "../../components/GreetingComponent/BackgroundImage";
 import axios from "axios";
 import {Helmet} from "react-helmet";
 import CarouselComponent from "../../components/carousel/CarouselComponent";
 import Marquee from "../../components/marquee/Marquee";
+import ContactsComponent from "../../components/ContactsComponent";
 
 const HomePage = () => {
 
   const benefits = [
-    { title: 'Уникальные программы 😎', description: 'Кобрендинговые образовательные программы магистратуры с лидерами IT-отрасли: новейшие сквозные технологии, преподаватели-практики, проектная и исследовательская работа, междисциплинарные учебные модули и проекты.' },
-    { title: 'Актуальное обучение 🔥', description: 'Тесная связь с индустрией, подготовка специалистов в соответствии с актуальными требованиями работодателей, обучение на реальных задачах.' },
-    { title: 'IT-мероприятия 🚀', description: 'Современные технологии обучения, дополнительные образовательные программы и мастер-классы от ведущих специалистов IT и бизнес отрасли, хакатоны, акселерационные программы и поддержка студенческих стартапов.' },
-    { title: 'Поддержка 🤝', description: 'Комьюнити выпускников и партнеров: наставничество и менторство, нетворкинг и участие в жизни университета.' },
+    { title: 'Уникальные программы \u{1F60E}', description: 'Кобрендинговые образовательные программы магистратуры с лидерами IT-отрасли: новейшие сквозные технологии, преподаватели-практики, проектная и исследовательская работа, междисциплинарные учебные модули и проекты.' },
+    { title: 'Актуальное обучение \u{1F525}', description: 'Тесная связь с индустрией, подготовка специалистов в соответствии с актуальными требованиями работодателей, обучение на реальных задачах.' },
+    { title: 'IT-мероприятия \u{1F680}', description: 'Современные технологии обучения, дополнительные образовательные программы и мастер-классы от ведущих специалистов IT и бизнес отрасли, хакатоны, акселерационные программы и поддержка студенческих стартапов.' },
+    { title: 'Поддержка \u{1F91D}', description: 'Комьюнити выпускников и партнеров: наставничество и менторство, нетворкинг и участие в жизни университета.' },
   ];
 
   const highlightsBachelor = [
@@ -120,6 +119,15 @@ const HomePage = () => {
     // Дополнительные настройки карусели по необходимости
   };
 
+  // const logos = [
+  //     '../../assets/images/logo/minpromtorg.svg',
+  //     '../../assets/images/logo/768px-Emblem_of_the_Department_of_Information_Technology_of_the_city_of_Moscow.svg.png',
+  //     '../../assets/images/logo/ispran.jpg',
+  //     '../../assets/images/logo/Kaspersky_Lab-Logo.wine.svg',
+  //     '../../assets/images/logo/newsber-seeklogo.com.svg',
+  //     '../../assets/images/logo/Ozon logo RGB-white.svg',
+  // ]
+
   const logos = [
     'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/800px-Apple_logo_black.svg.png',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/800px-Apple_logo_black.svg.png',
@@ -181,7 +189,7 @@ const HomePage = () => {
         <CarouselComponent items={carouselItems} settings={carouselSettings} />
         <div className="content">
           <h2 className="section-title">О нас</h2>
-          <div style={{background: '#141414', borderRadius: '25px', padding: '20px'}}>
+          <div className='highlight-content'>
           <p className="section-text">
               Институт №8 «Компьютерные науки и прикладная математика» — признанная в России и за рубежом научная математическая и IT-школа. Уже более полувека мы готовим талантливых профессионалов, которые успешно применяют свои знания в различных областях, включая IT, финансы, робототехнику, экономику, авиацию, космонавтику и другие востребованные направления.</p>
             <p className="section-text">
@@ -199,41 +207,13 @@ const HomePage = () => {
           <h2 className="section-title">Преимущества обучения</h2>
           <Highlight data={benefits}/>
           <h2 className="section-title">Стек технологий выпускника</h2>
-          <p className="section-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu massa hendrerit, viverra risus eu, molestie dolor. Ut dictum fringilla justo, vitae tristique nulla sollicitudin vel. Donec a ultricies felis. Nulla facilisi. Phasellus eu sem at justo facilisis sollicitudin. Etiam volutpat efficitur velit, a tempor ante consequat in.
-          </p>
+          <Marquee logos={logos} />
           <h2 className="section-title">Наши партнеры</h2>
           <Marquee logos={logos} />
           <h2 className="section-title">Частые вопросы</h2>
           <FAQSection faqs={faqs}/>
           <h2 className="section-title">Контакты</h2>
-          <div className="contact-block">
-            <div className="text-block">
-              <p className="section-text">
-                Свяжитесь с нами, чтобы получить дополнительную информацию о нас и наших направлениях подготовки. Мы всегда готовы ответить на ваши вопросы. Вы можете связаться с нами по телефону, электронной почте или через телеграм. Мы ждем вашего сообщения!
-              </p>
-              <p className="section-text">
-                Адрес приемной комиссии МАИ: <a href={'https://yandex.ru/maps/-/CCUDB-tEpD'} style={{textDecoration: 'none', color: '#007ACD'}} target="_blank" rel="noopener noreferrer">125310, Москва, Волоколамское шоссе, 4к6, 3 этаж, комната 8.</a>
-              </p>
-              <p className="section-text">
-                Время работы:<br/>
-                Будни: 10:00 - 17:00<br/>
-                Суббота: 10:00 - 14:00<br/>
-              </p>
-              <p className="section-text">
-                Телефон приемной комиссии Института №8 МАИ: <a href={'tel:+74991584977'} style={{textDecoration: 'none', color: '#007ACD'}} target="_blank" rel="noopener noreferrer">7&nbsp;(499)&nbsp;158&nbsp;49&nbsp;77</a>
-              </p>
-              <p className="section-text">
-                Электронная почта приемной комиссии Института №8 МАИ: <a href={'mailto:priem008@gmail.com'} style={{textDecoration: 'none', color: '#007ACD'}} target="_blank" rel="noopener noreferrer">priem008@gmail.com</a>
-              </p>
-              <p className="section-text">
-                🔥Телеграм чат абитуриентов 2023🔥: <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#007ACD'}} target="_blank" rel="noopener noreferrer">https://t.me/mai8inst</a>
-              </p>
-              </div>
-              <div className="map-block">
-                <MapContainer />
-              </div>
-          </div>
+          <ContactsComponent />
         </div>
       </div>
   );

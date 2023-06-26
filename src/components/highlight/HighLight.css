@@ -25,12 +25,12 @@
     width: 310px;
     margin-right: 20px;
     margin-bottom: 20px;
-    background-color: #414141;
+    background-color: #141414;
     border-radius: 8px;
     position: relative;
 }
 
-.highlight-content {
+.highlight-content-h {
     margin: 15px;
 }
 

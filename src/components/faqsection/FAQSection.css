@@ -26,9 +26,9 @@
 
 .faq-answer {
     margin-top: 10px;
-    padding: 10px;
-    background-color: #1E1E1E;
-    border-radius: 4px;
+    background-color: #141414;
+    border-radius: 25px;
+    padding: 20px;
 }
 
 .faq-arrow {
