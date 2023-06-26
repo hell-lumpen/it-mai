@@ -97,7 +97,7 @@ h3 {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 20px 20px;
+  padding: 60px 20px 20px;
 }
 
 .content {
@@ -135,8 +135,8 @@ h3 {
 }
 
 .logo img {
-  width: 215px;
-  height: auto;
+  width: auto;
+  height: 50px;
   margin-right: 10px;
   margin-left: 10px;
 }
