@@ -55,9 +55,11 @@ const HomePage = () => {
   };
 
   const [popupData, setPopupData] = useState(null);
+  const [logoData, setLogoData] = useState(null);
 
   useEffect(() => {
     fetchData();
+    fetchLogo();
   }, []);
 
   const fetchData = async () => {
@@ -119,14 +121,21 @@ const HomePage = () => {
     // Дополнительные настройки карусели по необходимости
   };
 
-  // const logos = [
-  //     '../../assets/images/logo/minpromtorg.svg',
-  //     '../../assets/images/logo/768px-Emblem_of_the_Department_of_Information_Technology_of_the_city_of_Moscow.svg.png',
-  //     '../../assets/images/logo/ispran.jpg',
-  //     '../../assets/images/logo/Kaspersky_Lab-Logo.wine.svg',
-  //     '../../assets/images/logo/newsber-seeklogo.com.svg',
-  //     '../../assets/images/logo/Ozon logo RGB-white.svg',
-  // ]
+  const fetchLogo = async () => {
+    try {
+      const response = await axios.get('https://filimonov.org/stacklogos.json'); // Путь к вашему серверу и маршруту обработки запроса
+      const json = response.data;
+      console.log(json);
+
+      if (json && Object.keys(json).length > 0) {
+        setLogoData(json);
+        console.log(json);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
 
   const logos = [
     'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/800px-Apple_logo_black.svg.png',
@@ -207,9 +216,9 @@ const HomePage = () => {
           <h2 className="section-title">Преимущества обучения</h2>
           <Highlight data={benefits}/>
           <h2 className="section-title">Стек технологий выпускника</h2>
-          <Marquee logos={logos} />
+          <Marquee logos={logoData} />
           <h2 className="section-title">Наши партнеры</h2>
-          <Marquee logos={logos} />
+          <Marquee logos={logoData} />
           <h2 className="section-title">Частые вопросы</h2>
           <FAQSection faqs={faqs}/>
           <h2 className="section-title">Контакты</h2>

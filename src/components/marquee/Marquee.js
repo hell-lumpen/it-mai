@@ -2,6 +2,7 @@ import React from 'react';
 import './Marquee.css';
 
 const Marquee = ({ logos }) => {
+  console.log(logos);
   return (
       <div className="marquee-container">
         <div className="marquee">
