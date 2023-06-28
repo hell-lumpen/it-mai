@@ -56,25 +56,26 @@ const HomePage = () => {
 
   const [popupData, setPopupData] = useState(null);
   const [logoData, setLogoData] = useState(null);
+  const [companyLogoData, setCompanyLogoData] = useState(null);
 
   useEffect(() => {
-    fetchData();
-    fetchLogo();
-  }, []);
+    const fetchData = async () => {
+      try {
+        const eventResponse = await axios.get('https://filimonov.org/event2.json');
+        setPopupData(eventResponse.data);
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get('https://filimonov.org/event2.json'); // Путь к вашему серверу и маршруту обработки запроса
-      const json = response.data;
+        const logoResponse = await axios.get('https://filimonov.org/stacklogos.json');
+        setLogoData(logoResponse.data);
 
-      if (json && Object.keys(json).length > 0) {
-        setPopupData(json);
-        setShowPopup(true);
+        const companyLogoResponse = await axios.get('https://filimonov.org/stacklogos.json');
+        setLogoData(logoResponse.data);
+      } catch (error) {
+        // Обработка ошибки
       }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+    };
+
+    fetchData();
+  }, []);
 
   const carouselItems = [
     {
@@ -82,69 +83,20 @@ const HomePage = () => {
       title: 'Поступи в МАИ ✕ Институт №8',
       description: 'МАИ начал прием документов на поступление 20 июня 2023 года. Подать документы можно очно, через личный кабинет абитуриента МАИ и через сервис от Госуслуг. Прием оригиналов документов на поступление продлится до 3 августа.',
       link: '/admission/application',
-    },
-    {
-      image: 'https://5play.ru/uploads/posts/2022-06/1654082098_2.webp',
-      title: 'Web Summit',
-      description: 'Web Summit — крупнейшая технологическая конференция в мире, которая собирает тысячи индустрийных лидеров, стартапов, инвесторов и журналистов. Она проходит ежегодно в Лиссабоне, Португалия.',
-      link: 'https://websummit.com/',
-    },
-    {
-      image: 'https://5play.ru/uploads/posts/2022-06/1654082098_2.webp',
-      title: 'WWDC',
-      description: 'WWDC (Worldwide Developers Conference) — ежегодное мероприятие, организованное Apple, на котором компания представляет новые продукты, технологии и программное обеспечение. WWDC привлекает разработчиков со всего мира. ',
-      link: 'https://developer.apple.com/wwdc/',
-    },
-    {
-      title: 'Google I/O',
-      description: 'Google I/O — ежегодная конференция, проводимая Google, на которой компания представляет свои новейшие продукты, инструменты разработки и технологии. Конференция открыта для разработчиков и всего сообщества Google.',
-      link: 'https://events.google.com/io/',
-    },
-    {
-      image: 'https://5play.ru/uploads/posts/2022-06/1654082098_2.webp',
-      title: 'DEF CON',
-      description: 'DEF CON — одна из крупнейших международных конференций по компьютерной безопасности, которая собирает хакеров, исследователей и экспертов по информационной безопасности. DEF CON проводится ежегодно в Лас-Вегасе, США.',
-      link: 'https://defcon.org/',
-    },
+    }
   ];
 
 
   const carouselSettings = {
     showArrows: false,
     showStatus: false,
-    showIndicators: true,
+    showIndicators: false,
     showThumbs: false,
     autoPlay: true,
     infiniteLoop: true,
     interval: 3000,
     transitionTime: 500,
-    // Дополнительные настройки карусели по необходимости
   };
-
-  const fetchLogo = async () => {
-    try {
-      const response = await axios.get('https://filimonov.org/stacklogos.json'); // Путь к вашему серверу и маршруту обработки запроса
-      const json = response.data;
-      console.log(json);
-
-      if (json && Object.keys(json).length > 0) {
-        setLogoData(json);
-        console.log(json);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-
-  const logos = [
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/800px-Apple_logo_black.svg.png',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/800px-Apple_logo_black.svg.png',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/800px-Apple_logo_black.svg.png',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1920px-Google_2015_logo.svg.png',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1920px-Google_2015_logo.svg.png',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1920px-Google_2015_logo.svg.png',
-  ];
 
   const description = "Институт №8 «Компьютерные науки и прикладная математика» — признанная в России и за рубежом научная математическая и IT-школа. Уже более полувека мы готовим талантливых профессионалов, которые успешно применяют свои знания в различных областях, включая IT, финансы, робототехнику, экономику, авиацию, космонавтику и другие востребованные направления.";
   const keywords = "Институт №8, Компьютерные науки, Прикладная математика, IT-школа, профессионалы, образование, IT, финансы, робототехника, экономика, авиация, космонавтика, научные исследования, преподаватели, высокотехнологичные компании, студенты, научные мероприятия, карьера";
@@ -202,12 +154,6 @@ const HomePage = () => {
           <p className="section-text">
               Институт №8 «Компьютерные науки и прикладная математика» — признанная в России и за рубежом научная математическая и IT-школа. Уже более полувека мы готовим талантливых профессионалов, которые успешно применяют свои знания в различных областях, включая IT, финансы, робототехнику, экономику, авиацию, космонавтику и другие востребованные направления.</p>
             <p className="section-text">
-              В состав института входят 4 кафедры. Кафедра 802 "Мехатроника и теоретическая механика" изучает теоретические основы механики, методы математического моделирования и численного анализа. Кафедра 804 "Теория вероятностей и компьютерное моделирование" занимается исследованиями в области теории вероятностей, статистики, компьютерного моделирования и численного решения задач. Кафедра 805 "Математическая кибернетика" специализируется на математических методах, методах оптимизации и моделях для анализа и управления сложными системами. Кафедра 806 "Вычислительная математика и программирование" занимается численными методами, алгоритмами и программированием, методами искусственного интеллекта и анализом данных.          </p>
-            <p className="section-text">
-              В нашем институте работают более 250 преподавателей, в том числе 60 профессоров, докторов наук и 145 доцентов, кандидатов наук. Институт возглавляет Сергей Сергеевич Крылов — кандидат физико-математических наук.
-              Среди наших преподавателей — опытные специалисты из таких высокотехнологичных компаний, как VK, Яндекс и МТС. Они с радостью поделятся с вами передовыми практиками и важными знаниями, накопленными в индустрии.
-            </p>
-            <p className="section-text">
               Обучение в нашем институте предоставляет студентам обширные перспективы. Они активно участвуют в научных мероприятиях, таких как конференции и публикации, что помогает им развивать свои навыки в научных исследованиях. Замечательно то, что многие студенты уже в процессе обучения имеют возможность работать в ведущих компаниях, таких как Сбер, Тинькофф, МТС, Яндекс, VK, Лаборатория Касперского и многие другие. Это дает им ценный опыт работы в индустрии еще до окончания обучения и создает хорошие перспективы для успешной карьеры после окончания института.
             </p>
           </div>
@@ -216,9 +162,17 @@ const HomePage = () => {
           <h2 className="section-title">Преимущества обучения</h2>
           <Highlight data={benefits}/>
           <h2 className="section-title">Стек технологий выпускника</h2>
-          <Marquee logos={logoData} />
+          {logoData ? (
+              <Marquee logos={logoData.stacklogos} />
+          ) : (
+              <p>Loading Logo Data...</p>
+          )}
           <h2 className="section-title">Наши партнеры</h2>
-          <Marquee logos={logoData} />
+          {logoData ? (
+              <Marquee logos={logoData.stacklogos} />
+          ) : (
+              <p>Loading Logo Data...</p>
+          )}
           <h2 className="section-title">Частые вопросы</h2>
           <FAQSection faqs={faqs}/>
           <h2 className="section-title">Контакты</h2>
