@@ -8,27 +8,23 @@ const Marquee = ({ logos }) => {
         <div className="marquee">
           {logos.map((logo, index) => (
               <div key={index} className="marquee-item">
-                <img src={logo} alt={`Logo ${index + 1}`} style={{borderRadius: '5px'}}/>
+                <img src={logo} alt={`Logo ${index + 1}`} style={{borderRadius: '8px'}}/>
               </div>
           ))}{logos.map((logo, index) => (
               <div key={index} className="marquee-item">
-                <img src={logo} alt={`Logo ${index + 1}`} style={{borderRadius: '5px'}}/>
+                <img src={logo} alt={`Logo ${index + 1}`} style={{borderRadius: '8px'}}/>
               </div>
           ))}{logos.map((logo, index) => (
               <div key={index} className="marquee-item">
-                <img src={logo} alt={`Logo ${index + 1}`} style={{borderRadius: '5px'}}/>
+                <img src={logo} alt={`Logo ${index + 1}`} style={{borderRadius: '8px'}}/>
               </div>
           ))}{logos.map((logo, index) => (
               <div key={index} className="marquee-item">
-                <img src={logo} alt={`Logo ${index + 1}`} style={{borderRadius: '5px'}}/>
+                <img src={logo} alt={`Logo ${index + 1}`} style={{borderRadius: '8px'}}/>
               </div>
           ))}{logos.map((logo, index) => (
               <div key={index} className="marquee-item">
-                <img src={logo} alt={`Logo ${index + 1}`} style={{borderRadius: '5px'}}/>
-              </div>
-          ))}{logos.map((logo, index) => (
-              <div key={index} className="marquee-item">
-                <img src={logo} alt={`Logo ${index + 1}`} style={{borderRadius: '5px'}}/>
+                <img src={logo} alt={`Logo ${index + 1}`} style={{borderRadius: '8px'}}/>
               </div>
           ))}
         </div>
