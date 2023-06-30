@@ -2,7 +2,7 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import './HighLight.css';
 
-const Highlight = ({ data }) => {
+const Highlight = ({ data, highlightWidth }) => {
   const getTileCount = () => {
     const screenWidth = window.innerWidth;
     if (screenWidth <= 480) {
@@ -28,6 +28,11 @@ const Highlight = ({ data }) => {
             triggerOnce: true, // Trigger animation only once
           });
 
+          const highlightStyle = {
+            width: highlightWidth, // Set the width style based on the highlightWidth prop
+            cursor: link ? 'pointer' : null, // Set the cursor style if link is provided
+          };
+
           return (
               <div
                   key={index}
@@ -36,7 +41,7 @@ const Highlight = ({ data }) => {
                   }`}
                   ref={ref}
                   onClick={() => handleHighlightClick(link)}
-                  style={link ? { cursor: 'pointer' } : null}
+                  style={highlightStyle}
               >
                 <div className="highlight-content-h">
                   <h3 className="highlight-title">{title}</h3>

@@ -4,7 +4,7 @@ import '../App.css';
 
 const MapContainer = () => {
   const mapContainerRef = useRef(null);
-  const [mapStyle, setMapStyle] = useState({ width: '300px', height: '400px' });
+  const [mapStyle, setMapStyle] = useState({ width: '300px', height: '400px', borderRadius: '25px', padding: '20px'});
 
   useEffect(() => {
     const resizeMap = () => {
