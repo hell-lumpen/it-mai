@@ -67,8 +67,8 @@ const HomePage = () => {
         const logoResponse = await axios.get('https://filimonov.org/stacklogos.json');
         setLogoData(logoResponse.data);
 
-        const companyLogoResponse = await axios.get('https://filimonov.org/stacklogos.json');
-        setLogoData(logoResponse.data);
+        const companyLogoResponse = await axios.get('https://filimonov.org/komplogos.json');
+        setCompanyLogoData(companyLogoResponse.data);
       } catch (error) {
         // Обработка ошибки
       }
@@ -168,8 +168,8 @@ const HomePage = () => {
               <p>Loading Logo Data...</p>
           )}
           <h2 className="section-title">Наши партнеры</h2>
-          {logoData ? (
-              <Marquee logos={logoData.stacklogos} />
+          {companyLogoData ? (
+              <Marquee logos={companyLogoData.komplogos} />
           ) : (
               <p>Loading Logo Data...</p>
           )}
