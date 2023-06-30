@@ -107,43 +107,43 @@ const HomePage = () => {
           <meta name="description" content={description} />
           <meta name="keywords" content={keywords} />
         </Helmet>
-        {/*  <div style={{zIndex: 9999}}>*/}
-        {/*  {showPopup && popupData && (*/}
-        {/*      <div className="popup">*/}
-        {/*        <div className="popup-content">*/}
-        {/*          <button className="close-btn" onClick={closePopup}>*/}
-        {/*            <span className="cross-icon">&#10005;</span>*/}
-        {/*          </button>*/}
-        {/*          <h2 style={{ color: '#fff' }}>{popupData.title}</h2>*/}
-        {/*          <p style={{ color: '#fff' }}>{popupData.description}</p>*/}
-        {/*          {popupData.date && <p style={{ color: '#fff' }}>Дата мероприятия: {popupData.date}</p>}*/}
-        {/*          {popupData.link && <p style={{ color: '#fff' }}>Ссылка на мероприятие: {popupData.link}</p>}*/}
-        {/*          {popupData.location && <p style={{ color: '#fff' }}>Ссылка на мероприятие: {popupData.location}</p>}*/}
-        {/*          <p className="section-text">*/}
-        {/*            Вступай в наш телеграм чат абитуриентов <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#007ACD', fontWeight: 'bold'}} target="_blank" rel="noopener noreferrer">https://t.me/mai8inst</a>*/}
-        {/*          </p>*/}
-        {/*          {popupData.image &&*/}
-        {/*              <div style={{margin: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>*/}
-        {/*                <img style={{height: 'auto', width: '80%'}} src={popupData.image} alt="Popup Image" />*/}
-        {/*              </div>*/}
-        {/*          }*/}
-        {/*        </div>*/}
-        {/*      </div>*/}
-        {/*  )}{showPopup && !popupData && (*/}
-        {/*    <div className="popup">*/}
-        {/*      <div className="popup-content">*/}
-        {/*        <button className="close-btn" onClick={closePopup}>*/}
-        {/*          <span className="cross-icon">&#10005;</span>*/}
-        {/*        </button>*/}
-        {/*        <h2 className='section-title' style={{ color: '#007ACD' }}>Привет, абитуриент!</h2>*/}
-        {/*        <p className='section-text' style={{ color: '#fff' }}>Вступай в наш телеграм чат абитуриентов 2023, где можно получать оперативную информацию от приемной комиссии и задать вопрос Директору Института №8 Крылову Сергею Сергеевичу.</p>*/}
-        {/*        <p className="section-text">*/}
-        {/*          <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#007ACD', fontWeight: 'bold'}} target="_blank" rel="noopener noreferrer">https://t.me/mai8inst</a>*/}
-        {/*        </p>*/}
-        {/*      </div>*/}
-        {/*    </div>*/}
-        {/*)}*/}
-        {/*</div>*/}
+          <div style={{zIndex: 9999}}>
+          {showPopup && popupData && (
+              <div className="popup">
+                <div className="popup-content">
+                  <button className="close-btn" onClick={closePopup}>
+                    <span className="cross-icon">&#10005;</span>
+                  </button>
+                  <h2 style={{ color: '#fff' }}>{popupData.title}</h2>
+                  <p style={{ color: '#fff' }}>{popupData.description}</p>
+                  {popupData.date && <p style={{ color: '#fff' }}>Дата мероприятия: {popupData.date}</p>}
+                  {popupData.link && <p style={{ color: '#fff' }}>Ссылка на мероприятие: {popupData.link}</p>}
+                  {popupData.location && <p style={{ color: '#fff' }}>Ссылка на мероприятие: {popupData.location}</p>}
+                  <p className="section-text">
+                    Вступай в наш телеграм чат абитуриентов <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#007ACD', fontWeight: 'bold'}} target="_blank" rel="noopener noreferrer">https://t.me/mai8inst</a>
+                  </p>
+                  {popupData.image &&
+                      <div style={{margin: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                        <img style={{height: 'auto', width: '80%'}} src={popupData.image} alt="Popup Image" />
+                      </div>
+                  }
+                </div>
+              </div>
+          )}{showPopup && !popupData && (
+            <div className="popup">
+              <div className="popup-content">
+                <button className="close-btn" onClick={closePopup}>
+                  <span className="cross-icon">&#10005;</span>
+                </button>
+                <h2 className='section-title' style={{ color: '#007ACD' }}>Привет, абитуриент!</h2>
+                <p className='section-text' style={{ color: '#fff' }}>Вступай в наш телеграм чат абитуриентов 2023, где можно получать оперативную информацию от приемной комиссии и задать вопрос Директору Института №8 Крылову Сергею Сергеевичу.</p>
+                <p className="section-text">
+                  <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#007ACD', fontWeight: 'bold'}} target="_blank" rel="noopener noreferrer">https://t.me/mai8inst</a>
+                </p>
+              </div>
+            </div>
+        )}
+        </div>
         {/*<BackgroundImage />*/}
         <h1 className="title" style={{color: "#007ACD"}}>Институт №8</h1>
         <h1 className="subtitle">Компьютерные науки и прикладная математика</h1>
