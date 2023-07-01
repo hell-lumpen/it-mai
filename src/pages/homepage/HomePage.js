@@ -6,6 +6,7 @@ import {Helmet} from "react-helmet";
 import CarouselComponent from "../../components/carousel/CarouselComponent";
 import Marquee from "../../components/marquee/Marquee";
 import ContactsComponent from "../../components/ContactsComponent";
+import NumberCounter from "../../components/сounterсomponent/NumberCounter";
 
 const HomePage = () => {
 
@@ -61,13 +62,13 @@ const HomePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const eventResponse = await axios.get('https://filimonov.org/event2.json');
+        const eventResponse = await axios.get('https://itmai.ru/storage/event2.json');
         setPopupData(eventResponse.data);
 
-        const logoResponse = await axios.get('https://filimonov.org/stacklogos.json');
+        const logoResponse = await axios.get('https://itmai.ru/storage/stacklogos.json');
         setLogoData(logoResponse.data);
 
-        const companyLogoResponse = await axios.get('https://filimonov.org/komplogos.json');
+        const companyLogoResponse = await axios.get('https://itmai.ru/storage/komplogos.json');
         setCompanyLogoData(companyLogoResponse.data);
       } catch (error) {
         // Обработка ошибки
@@ -79,7 +80,7 @@ const HomePage = () => {
 
   const carouselItems = [
     {
-      image: 'https://filimonov.org/images/homepage.jpg',
+      image: 'https://itmai.ru/storage/images/homepage.jpg',
       title: 'Поступи в МАИ ✕ Институт №8',
       description: 'МАИ начал прием документов на поступление 20 июня 2023 года. Подать документы можно очно, через личный кабинет абитуриента МАИ и через сервис от Госуслуг. Прием оригиналов документов на поступление продлится до 3 августа.',
       link: '/admission/application',
@@ -100,6 +101,8 @@ const HomePage = () => {
 
   const description = "Институт №8 «Компьютерные науки и прикладная математика» — признанная в России и за рубежом научная математическая и IT-школа. Уже более полувека мы готовим талантливых профессионалов, которые успешно применяют свои знания в различных областях, включая IT, финансы, робототехнику, экономику, авиацию, космонавтику и другие востребованные направления.";
   const keywords = "Институт №8, Компьютерные науки, Прикладная математика, IT-школа, профессионалы, образование, IT, финансы, робототехника, экономика, авиация, космонавтика, научные исследования, преподаватели, высокотехнологичные компании, студенты, научные мероприятия, карьера";
+
+
 
   return (
       <div className='container'>
@@ -151,6 +154,11 @@ const HomePage = () => {
         <div className="content">
           <h2 className="section-title">Наши направления</h2>
           <Highlight data={highlightsBachelor} highlightWidth="480px" />
+
+          <NumberCounter targetValue={1000} />
+          <NumberCounter targetValue={1000} />
+          <NumberCounter targetValue={1000} />
+
           <h2 className="section-title">О нас</h2>
           <div className='highlight-content'>
           <p className="section-text">
@@ -166,13 +174,13 @@ const HomePage = () => {
           {logoData ? (
               <Marquee logos={logoData.stacklogos} />
           ) : (
-              <p>Loading Logo Data...</p>
+              <p>Загрузка...</p>
           )}
           <h2 className="section-title">Наши партнеры</h2>
           {companyLogoData ? (
               <Marquee logos={companyLogoData.komplogos} />
           ) : (
-              <p>Loading Logo Data...</p>
+              <p>Загрузка...</p>
           )}
           <h2 className="section-title">Частые вопросы</h2>
           <FAQSection faqs={faqs}/>
