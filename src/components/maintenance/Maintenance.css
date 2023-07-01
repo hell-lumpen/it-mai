@@ -1,0 +1,25 @@
+.maintenance-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.maintenance-content {
+    text-align: center;
+}
+
+.maintenance-logo {
+    width: 200px;
+    height: auto;
+}
+
+.maintenance-heading {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.maintenance-text {
+    font-size: 18px;
+    margin-top: 10px;
+}

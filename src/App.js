@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Switch, Route, withRouter } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import HomePage from './pages/homepage/HomePage';
 import './App.css';
@@ -9,6 +9,8 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import NotFoundPage from "./pages/notfoundpage/NotFoundPage";
 import AdmissionPage from "./pages/admissionpage/AdmissionPage";
+import MaintenancePage from "./components/maintenance/Maintenance";
+import Loader from "./components/loader/Loader";
 
 const ScrollToTop = ({ history }) => {
   useEffect(() => {
@@ -36,8 +38,67 @@ const ScrollToTop = ({ history }) => {
 };
 
 const App = ({ history }) => {
+  const [maintenanceMode, setMaintenanceMode] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  window.addEventListener('scroll', function() {
+  useEffect(() => {
+    const fetchConfig = async () => {
+      try {
+        const response = await fetch('https://itmai.ru/storage/config.json');
+        const data = await response.json();
+        setMaintenanceMode(data.maintenanceMode);
+      } catch (error) {
+        setMaintenanceMode(true); // Если не удалось получить конфигурационный файл, считаем, что сайт находится в режиме технических работ
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchConfig();
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      // Проверка сочетания клавиш (например, Ctrl + M) для отключения режима технических работ
+      if (event.ctrlKey && event.altKey && event.shiftKey && event.keyCode === 77) {
+        setMaintenanceMode(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  if (isLoading) {
+    // Ожидание загрузки конфигурационного файла
+    return (
+        <div className="app">
+          <Helmet>
+            <title>Институт №8 МАИ</title>
+          </Helmet>
+          <Loader />
+        </div>
+    );
+  }
+
+  if (maintenanceMode === true) {
+    // Переадресация на MaintenancePage, если maintenanceMode равно true
+    return (
+        <div className="app">
+          <MaintenancePage />
+        </div>
+    );
+  }
+
+  if (maintenanceMode === null) {
+    // Ожидание загрузки конфигурационного файла
+    return null;
+  }
+
+  window.addEventListener('scroll', function () {
     const header = document.querySelector('.header');
     if (window.scrollY > 0) {
       header.classList.add('scrolled');
@@ -45,7 +106,6 @@ const App = ({ history }) => {
       header.classList.remove('scrolled');
     }
   });
-
 
   return (
       <div className="app">
@@ -102,16 +162,21 @@ const App = ({ history }) => {
                 )}
             />
             <Route
-                path="*"
+                path="/maintenance"
                 render={() => (
                     <>
                       <Helmet>
-                        <title>404. Страница не найдена</title>
+                        <title>Институт №8 МАИ | Технические работы</title>
                       </Helmet>
-                      <NotFoundPage />
+                      <MaintenancePage />
                     </>
                 )}
             />
+            <Route
+                path="/404"
+                component={NotFoundPage}
+            />
+            <Redirect to="/404" />
           </Switch>
         </main>
         <Footer />
