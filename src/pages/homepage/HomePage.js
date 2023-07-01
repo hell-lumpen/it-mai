@@ -7,6 +7,7 @@ import CarouselComponent from "../../components/carousel/CarouselComponent";
 import Marquee from "../../components/marquee/Marquee";
 import ContactsComponent from "../../components/ContactsComponent";
 import NumberCounter from "../../components/сounterсomponent/NumberCounter";
+import { motion } from 'framer-motion';
 
 const HomePage = () => {
 
@@ -102,7 +103,15 @@ const HomePage = () => {
   const description = "Институт №8 «Компьютерные науки и прикладная математика» — признанная в России и за рубежом научная математическая и IT-школа. Уже более полувека мы готовим талантливых профессионалов, которые успешно применяют свои знания в различных областях, включая IT, финансы, робототехнику, экономику, авиацию, космонавтику и другие востребованные направления.";
   const keywords = "Институт №8, Компьютерные науки, Прикладная математика, IT-школа, профессионалы, образование, IT, финансы, робототехника, экономика, авиация, космонавтика, научные исследования, преподаватели, высокотехнологичные компании, студенты, научные мероприятия, карьера";
 
+  const headingVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0 },
+  };
 
+  const subtitleVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
 
   return (
       <div className='container'>
@@ -148,8 +157,32 @@ const HomePage = () => {
         )}
         </div>
         {/*<BackgroundImage />*/}
-        <h1 className="title" style={{color: "#007ACD"}}>Институт №8</h1>
-        <h1 className="subtitle">Компьютерные науки и прикладная математика</h1>
+        <motion.h1
+            className="title"
+            style={{
+              fontSize: '3rem',
+              fontWeight: 'bold',
+              fontFamily: 'GothamPro-Black, sans-serif',
+              background: 'linear-gradient(to right, #007ACD, #00D4FB)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
+            }}
+            initial="hidden"
+            animate="visible"
+            variants={headingVariants}
+            transition={{ duration: 1 }}
+        >
+          Институт №8
+        </motion.h1>
+        <motion.h1
+            className="subtitle"
+            initial="hidden"
+            animate="visible"
+            variants={subtitleVariants}
+            transition={{ duration: 1, delay: 0.5 }}
+        >
+          Компьютерные науки и прикладная математика
+        </motion.h1>
         <CarouselComponent items={carouselItems} settings={carouselSettings} />
         <div className="content">
           <h2 className="section-title">Наши направления</h2>
