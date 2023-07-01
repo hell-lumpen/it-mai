@@ -50,6 +50,7 @@ const App = ({ history }) => {
       } catch (error) {
         setMaintenanceMode(true); // Если не удалось получить конфигурационный файл, считаем, что сайт находится в режиме технических работ
       }
+      setIsLoading(false);
     };
 
     fetchConfig();
