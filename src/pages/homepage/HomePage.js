@@ -113,15 +113,36 @@ const HomePage = () => {
     visible: { opacity: 1 },
   };
 
+  const popupVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
+  const sectionTitleVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const highlightContentVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
   return (
       <div className='container'>
         <Helmet>
           <meta name="description" content={description} />
           <meta name="keywords" content={keywords} />
         </Helmet>
-          <div style={{zIndex: 9999}}>
+        <div style={{ zIndex: 9999 }}>
           {showPopup && popupData && (
-              <div className="popup">
+              <motion.div
+                  className="popup"
+                  initial="hidden"
+                  animate="visible"
+                  variants={popupVariants}
+                  transition={{ duration: 0.3 }}
+              >
                 <div className="popup-content">
                   <button className="close-btn" onClick={closePopup}>
                     <span className="cross-icon">&#10005;</span>
@@ -132,29 +153,56 @@ const HomePage = () => {
                   {popupData.link && <p style={{ color: '#fff' }}>Ссылка на мероприятие: {popupData.link}</p>}
                   {popupData.location && <p style={{ color: '#fff' }}>Ссылка на мероприятие: {popupData.location}</p>}
                   <p className="section-text">
-                    Вступай в наш телеграм чат абитуриентов <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#007ACD', fontWeight: 'bold'}} target="_blank" rel="noopener noreferrer">https://t.me/mai8inst</a>
+                    Вступай в наш телеграм чат абитуриентов{' '}
+                    <a
+                        href={'https://t.me/mai8inst'}
+                        style={{ textDecoration: 'none', color: '#007ACD', fontWeight: 'bold' }}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                      https://t.me/mai8inst
+                    </a>
                   </p>
-                  {popupData.image &&
-                      <div style={{margin: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                        <img style={{height: 'auto', width: '80%'}} src={popupData.image} alt="Popup Image" />
+                  {popupData.image && (
+                      <div style={{ margin: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <img style={{ height: 'auto', width: '80%' }} src={popupData.image} alt="Popup Image" />
                       </div>
-                  }
+                  )}
                 </div>
-              </div>
-          )}{showPopup && !popupData && (
-            <div className="popup">
-              <div className="popup-content">
-                <button className="close-btn" onClick={closePopup}>
-                  <span className="cross-icon">&#10005;</span>
-                </button>
-                <h2 className='section-title' style={{ color: '#007ACD' }}>Привет, абитуриент!</h2>
-                <p className='section-text' style={{ color: '#fff' }}>Вступай в наш телеграм чат абитуриентов 2023, где можно получать оперативную информацию от приемной комиссии и задать вопрос Директору Института №8 Крылову Сергею Сергеевичу.</p>
-                <p className="section-text">
-                  <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#007ACD', fontWeight: 'bold'}} target="_blank" rel="noopener noreferrer">https://t.me/mai8inst</a>
-                </p>
-              </div>
-            </div>
-        )}
+              </motion.div>
+          )}
+          {showPopup && !popupData && (
+              <motion.div
+                  className="popup"
+                  initial="hidden"
+                  animate="visible"
+                  variants={popupVariants}
+                  transition={{ duration: 0.3 }}
+              >
+                <div className="popup-content">
+                  <button className="close-btn" onClick={closePopup}>
+                    <span className="cross-icon">&#10005;</span>
+                  </button>
+                  <h2 className="section-title" style={{ color: '#007ACD' }}>
+                    Привет, абитуриент!
+                  </h2>
+                  <p className="section-text" style={{ color: '#fff' }}>
+                    Вступай в наш телеграм чат абитуриентов 2023, где можно получать оперативную информацию от приемной комиссии и
+                    задать вопрос Директору Института №8 Крылову Сергею Сергеевичу.
+                  </p>
+                  <p className="section-text">
+                    <a
+                        href={'https://t.me/mai8inst'}
+                        style={{ textDecoration: 'none', color: '#007ACD', fontWeight: 'bold' }}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                      https://t.me/mai8inst
+                    </a>
+                  </p>
+                </div>
+              </motion.div>
+          )}
         </div>
         {/*<BackgroundImage />*/}
         <motion.h1
@@ -188,19 +236,29 @@ const HomePage = () => {
           <h2 className="section-title">Наши направления</h2>
           <Highlight data={highlightsBachelor} highlightWidth="480px" />
 
-          <NumberCounter targetValue={1000} />
-          <NumberCounter targetValue={1000} />
-          <NumberCounter targetValue={1000} />
-
-          <h2 className="section-title">О нас</h2>
-          <div className='highlight-content'>
-          <p className="section-text">
-              Институт №8 «Компьютерные науки и прикладная математика» — признанная в России и за рубежом научная математическая и IT-школа. Уже более полувека мы готовим талантливых профессионалов, которые успешно применяют свои знания в различных областях, включая IT, финансы, робототехнику, экономику, авиацию, космонавтику и другие востребованные направления.</p>
-            <p className="section-text">
+          <motion.h2
+              className="section-title"
+              initial="hidden"
+              animate="visible"
+              variants={sectionTitleVariants}
+              transition={{ duration: 2 }}
+          >
+            О нас
+          </motion.h2>
+          <motion.div
+              className="highlight-content"
+              initial="hidden"
+              animate="visible"
+              variants={highlightContentVariants}
+              transition={{ duration: 2, delay: 0.2 }}
+          >
+            <motion.p className="section-text" transition={{ duration: 0.3, delay: 0.3 }}>
+              Институт №8 «Компьютерные науки и прикладная математика» — признанная в России и за рубежом научная математическая и IT-школа. Уже более полувека мы готовим талантливых профессионалов, которые успешно применяют свои знания в различных областях, включая IT, финансы, робототехнику, экономику, авиацию, космонавтику и другие востребованные направления.
+            </motion.p>
+            <motion.p className="section-text" transition={{ duration: 0.3, delay: 0.4 }}>
               Обучение в нашем институте предоставляет студентам обширные перспективы. Они активно участвуют в научных мероприятиях, таких как конференции и публикации, что помогает им развивать свои навыки в научных исследованиях. Замечательно то, что многие студенты уже в процессе обучения имеют возможность работать в ведущих компаниях, таких как Сбер, Тинькофф, МТС, Яндекс, VK, Лаборатория Касперского и многие другие. Это дает им ценный опыт работы в индустрии еще до окончания обучения и создает хорошие перспективы для успешной карьеры после окончания института.
-            </p>
-          </div>
-
+            </motion.p>
+          </motion.div>
           <h2 className="section-title">Преимущества обучения</h2>
           <Highlight data={benefits} highlightWidth="270px" />
           <h2 className="section-title">Стек технологий выпускника</h2>
