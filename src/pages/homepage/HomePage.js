@@ -223,7 +223,7 @@ const HomePage = () => {
         >
           Компьютерные науки и прикладная математика
         </motion.h1>
-        <CarouselComponent items={carouselItems} settings={carouselSettings} />
+        {/*<CarouselComponent items={carouselItems} settings={carouselSettings} />*/}
         <div className="content">
           <h2 className="section-title">Наши направления</h2>
           <Highlight data={highlightsBachelor} highlightWidth="480px" />
