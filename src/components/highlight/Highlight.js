@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
 import './HighLight.css';
@@ -26,7 +26,6 @@ const Highlight = ({ data, highlightWidth }) => {
         {data.map(({ title, description, link }, index) => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const controls = useAnimation();
-
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const [ref, inView] = useInView({
             triggerOnce: true, // Trigger animation only once
@@ -50,10 +49,32 @@ const Highlight = ({ data, highlightWidth }) => {
             }
           }, [controls, inView]);
 
+          const formatDescription = (description) => {
+            const parts = description.split(/(<span>[^<]*<\/span>|<br\s*\/?>)/g);
+
+            return parts.map((part, index) => {
+              if (part === '<br/>' || part === '<br>') {
+                return <br key={index} />;
+              } else if (part.startsWith('<span>') && part.endsWith('</span>')) {
+                return (
+                    <span
+                        key={index}
+                        style={{ color: '#6ed2ff', fontWeight: 'bold', fontFamily: 'GothamPro-Bold, sans-serif'}}
+                        dangerouslySetInnerHTML={{ __html: part }}
+                    />
+                );
+              } else {
+                return <span key={index}>{part}</span>;
+              }
+            });
+          };
+
           return (
               <motion.div
                   key={index}
-                  className={`highlight ${tileCount === 1 ? 'single' : 'double'}`}
+                  className={`highlight ${
+                      tileCount === 1 ? 'single' : 'double'
+                  }`}
                   ref={ref}
                   onClick={() => handleHighlightClick(link)}
                   style={highlightStyle}
@@ -63,7 +84,9 @@ const Highlight = ({ data, highlightWidth }) => {
               >
                 <div className="highlight-content-h">
                   <h3 className="highlight-title">{title}</h3>
-                  <p className="highlight-description">{description}</p>
+                  <p className="highlight-description">
+                    {formatDescription(description)}
+                  </p>
                 </div>
               </motion.div>
           );

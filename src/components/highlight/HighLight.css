@@ -35,6 +35,11 @@
     margin: 15px;
 }
 
+.highlight-title {
+    font-family: 'GothamPro-Black', sans-serif;
+    color: #6ed2ff;
+}
+
 .highlight-description {
     padding-bottom: 10px;
 }
