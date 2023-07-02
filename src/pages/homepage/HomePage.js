@@ -8,6 +8,7 @@ import Marquee from "../../components/marquee/Marquee";
 import ContactsComponent from "../../components/ContactsComponent";
 import { motion } from 'framer-motion';
 import AnimatedNumberComponent from "../../components/сounterсomponent/AnimatedNumberComponent";
+import {Link} from "react-router-dom";
 
 const HomePage = () => {
 
@@ -179,8 +180,8 @@ const HomePage = () => {
   };
 
   const highlightContentVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0 }
   };
 
   return (
@@ -291,6 +292,37 @@ const HomePage = () => {
           </motion.h2>
           <Highlight data={highlightsBachelor} highlightWidth="550px" />
 
+          <motion.div
+              className="highlights-container"
+              initial="hidden"
+              animate="visible"
+              variants={highlightContentVariants}
+              transition={{ duration: 1, delay: 0.5 }}
+          >
+            <motion.div
+                className="highlight"
+                style={{ width: '550px' }}
+                onClick={() => window.location.href = '/admission/application'}
+            >
+              <motion.div className="button_sec">
+                Подать заявку на поступление
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+                className="highlight"
+                style={{ width: '550px' }}
+                onClick={() => {
+                  const contactsElement = document.getElementById('contacts');
+                  contactsElement.scrollIntoView({ behavior: 'smooth' });
+                }}
+            >
+              <motion.div className="button_sec">
+                Связаться с нами
+              </motion.div>
+            </motion.div>
+          </motion.div>
+
           <motion.h2
               className="section-title"
               initial="hidden"
@@ -319,6 +351,7 @@ const HomePage = () => {
               Обучение в нашем институте предоставляет студентам обширные перспективы. Они активно участвуют в научных мероприятиях, таких как конференции и публикации, что помогает им развивать свои навыки в научных исследованиях. Замечательно то, что многие студенты уже в процессе обучения имеют возможность работать в ведущих компаниях, таких как Сбер, Тинькофф, МТС, Яндекс, VK, Лаборатория Касперского и многие другие. Это дает им ценный опыт работы в индустрии еще до окончания обучения и создает хорошие перспективы для успешной карьеры после окончания института.
             </motion.p>
           </motion.div>
+
           <h2 className="section-title">Преимущества обучения</h2>
           <Highlight data={benefits} highlightWidth="270px" />
           <h2 className="section-title">Стек технологий выпускника</h2>
@@ -335,8 +368,10 @@ const HomePage = () => {
           )}
           <h2 className="section-title">Частые вопросы</h2>
           <FAQSection faqs={faqs}/>
-          <h2 className="section-title">Контакты</h2>
-          <ContactsComponent />
+          <section id="contacts">
+            <h2 className="section-title">Контакты</h2>
+            <ContactsComponent />
+          </section>
         </div>
       </div>
   );
