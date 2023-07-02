@@ -210,7 +210,7 @@ const HomePage = () => {
             initial="hidden"
             animate="visible"
             variants={headingVariants}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.3 }}
         >
           Институт №8 - это IT
         </motion.h1>
@@ -219,13 +219,21 @@ const HomePage = () => {
             initial="hidden"
             animate="visible"
             variants={subtitleVariants}
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 0.3, delay: 0.5 }}
         >
           Компьютерные науки и прикладная математика
         </motion.h1>
         {/*<CarouselComponent items={carouselItems} settings={carouselSettings} />*/}
         <div className="content">
-          <h2 className="section-title">Наши направления</h2>
+          <motion.h2
+              className="section-title"
+              initial="hidden"
+              animate="visible"
+              variants={sectionTitleVariants}
+              transition={{ duration: 0.3 }}
+          >
+            Наши направления
+          </motion.h2>
           <Highlight data={highlightsBachelor} highlightWidth="480px" />
 
           <motion.h2
@@ -233,7 +241,7 @@ const HomePage = () => {
               initial="hidden"
               animate="visible"
               variants={sectionTitleVariants}
-              transition={{ duration: 2 }}
+              transition={{ duration: 0.3 }}
           >
             О нас
           </motion.h2>
@@ -242,12 +250,12 @@ const HomePage = () => {
               initial="hidden"
               animate="visible"
               variants={highlightContentVariants}
-              transition={{ duration: 2, delay: 0.2 }}
+              transition={{ duration: 0.3, delay: 0.5 }}
           >
-            <motion.p className="section-text" transition={{ duration: 0.3, delay: 0.3 }}>
-              Институт №8 «Компьютерные науки и прикладная математика» — признанная в России и за рубежом научная математическая и IT-школа. Уже более полувека мы готовим талантливых профессионалов, которые успешно применяют свои знания в различных областях, включая IT, финансы, робототехнику, экономику, авиацию, космонавтику и другие востребованные направления.
+            <motion.p className="section-text" transition={{ duration: 0.3, delay: 1 }}>
+              Институт №8 «Компьютерные науки и прикладная математика» — признанная в России и за рубежом научная, математическая и IT-школа. Уже более полувека мы готовим талантливых профессионалов, которые успешно применяют свои знания в различных областях, включая IT, финансы, робототехнику, экономику, авиацию, космонавтику и другие востребованные направления.
             </motion.p>
-            <motion.p className="section-text" transition={{ duration: 0.3, delay: 0.4 }}>
+            <motion.p className="section-text" transition={{ duration: 0.3, delay: 2 }}>
               Обучение в нашем институте предоставляет студентам обширные перспективы. Они активно участвуют в научных мероприятиях, таких как конференции и публикации, что помогает им развивать свои навыки в научных исследованиях. Замечательно то, что многие студенты уже в процессе обучения имеют возможность работать в ведущих компаниях, таких как Сбер, Тинькофф, МТС, Яндекс, VK, Лаборатория Касперского и многие другие. Это дает им ценный опыт работы в индустрии еще до окончания обучения и создает хорошие перспективы для успешной карьеры после окончания института.
             </motion.p>
           </motion.div>

@@ -46,12 +46,13 @@ const App = ({ history }) => {
       try {
         const response = await fetch('https://itmai.ru/storage/config.json');
         const data = await response.json();
-        setMaintenanceMode(data.maintenanceMode);
+        setMaintenanceMode(false);
       } catch (error) {
-        setMaintenanceMode(true); // Если не удалось получить конфигурационный файл, считаем, что сайт находится в режиме технических работ
+        setMaintenanceMode(false);
       }
       setIsLoading(false);
     };
+
 
     fetchConfig();
   }, []);

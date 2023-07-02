@@ -94,7 +94,7 @@ body {
 }
 
 body {
-  background-image: url('../src/assets/images/1549179999_71406ad5064e4f0.gif');
+  background-image: url('../src/assets/images/videoblocks-motion-retro-pixel-abstract-background-elegant-and-luxury-dynamic-geometric-80s-90s-style-template_stnsbdl04_thumbnail-1080_01.png');
   background-repeat: repeat;
 }
 
@@ -182,6 +182,7 @@ h3 {
 }
 
 .menu-item:last-child a{
+  font-family: 'GothamPro-Black', sans-serif;
   font-size: 20px;
   font-weight: bold;
   color: #007ACD;

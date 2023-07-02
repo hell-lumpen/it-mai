@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation } from 'framer-motion';
 import './HighLight.css';
 
 const Highlight = ({ data, highlightWidth }) => {
@@ -24,6 +25,9 @@ const Highlight = ({ data, highlightWidth }) => {
       <div className="highlights-container">
         {data.map(({ title, description, link }, index) => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
+          const controls = useAnimation();
+
+          // eslint-disable-next-line react-hooks/rules-of-hooks
           const [ref, inView] = useInView({
             triggerOnce: true, // Trigger animation only once
           });
@@ -33,21 +37,35 @@ const Highlight = ({ data, highlightWidth }) => {
             cursor: link ? 'pointer' : null, // Set the cursor style if link is provided
           };
 
+          const variants = {
+            hidden: { opacity: 0, y: -50 },
+            visible: { opacity: 1, y: 0 },
+          };
+
+          // Animate the highlight when it comes into view
+          // eslint-disable-next-line react-hooks/rules-of-hooks
+          useEffect(() => {
+            if (inView) {
+              controls.start('visible');
+            }
+          }, [controls, inView]);
+
           return (
-              <div
+              <motion.div
                   key={index}
-                  className={`highlight ${tileCount === 1 ? 'single' : 'double'} ${
-                      inView ? 'highlight-appear' : ''
-                  }`}
+                  className={`highlight ${tileCount === 1 ? 'single' : 'double'}`}
                   ref={ref}
                   onClick={() => handleHighlightClick(link)}
                   style={highlightStyle}
+                  initial="hidden"
+                  animate={controls}
+                  variants={variants}
               >
                 <div className="highlight-content-h">
                   <h3 className="highlight-title">{title}</h3>
                   <p className="highlight-description">{description}</p>
                 </div>
-              </div>
+              </motion.div>
           );
         })}
       </div>
