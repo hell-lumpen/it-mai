@@ -206,15 +206,7 @@ const HomePage = () => {
         </div>
         {/*<BackgroundImage />*/}
         <motion.h1
-            className="title"
-            style={{
-              fontSize: '3rem',
-              fontWeight: 'bold',
-              fontFamily: 'GothamPro-Black, sans-serif',
-              background: 'linear-gradient(to right, #007ACD, #00D4FB)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent'
-            }}
+            className="main-title"
             initial="hidden"
             animate="visible"
             variants={headingVariants}

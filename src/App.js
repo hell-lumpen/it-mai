@@ -44,7 +44,7 @@ const App = ({ history }) => {
   useEffect(() => {
     const fetchConfig = async () => {
       try {
-        const response = await fetch('http://itmai.ru/storage/config.json');
+        const response = await fetch('https://itmai.ru/storage/config.json');
         const data = await response.json();
         setMaintenanceMode(data.maintenanceMode);
       } catch (error) {

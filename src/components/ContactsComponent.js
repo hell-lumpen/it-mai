@@ -28,7 +28,7 @@ const ContactsComponent = () => {
           Электронная почта приемной комиссии Института №8 МАИ: <a href={'mailto:priem008@gmail.com'} style={{textDecoration: 'none', color: '#007ACD'}} target="_blank" rel="noopener noreferrer">priem008@gmail.com</a>
         </p>
         <p className="section-text">
-          {'\u{1F525}'}Телеграм чат абитуриентов 2023{'\u{1F525}'}: <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#007ACD'}} target="_blank" rel="noopener noreferrer">https://t.me/mai8inst</a>
+          Телеграм чат абитуриентов 2023: <a href={'https://t.me/mai8inst'} style={{textDecoration: 'none', color: '#007ACD'}} target="_blank" rel="noopener noreferrer">https://t.me/mai8inst</a>
         </p>
         </p>
       </div>

@@ -94,14 +94,30 @@ body {
 }
 
 body {
-  background-image: url('../src/assets/images/60284.jpg');
-  /*backdrop-filter: brightness(20%);*/
+  background-image: url('../src/assets/images/60284_1.jpg');
   background-repeat: repeat;
 }
 
 h1 {
   font-family: 'GothamPro-Medium', sans-serif;
   font-size: 2rem;
+}
+
+.main-title {
+  font-size: 7rem;
+  font-weight: bold;
+  font-family: 'GothamPro-Black', sans-serif;
+  background: linear-gradient(to right, #007ACD, #00D4FB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 3rem;
+  }
 }
 
 h2 {
