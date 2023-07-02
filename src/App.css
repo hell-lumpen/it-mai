@@ -104,7 +104,7 @@ h1 {
 }
 
 .main-title {
-  font-size: 7rem;
+  font-size: 6rem;
   font-weight: bold;
   font-family: 'GothamPro-Black', sans-serif;
   background: linear-gradient(to right, #007ACD, #00D4FB);
@@ -116,9 +116,10 @@ h1 {
 
 @media (max-width: 480px) {
   .main-title {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 }
+
 
 h2 {
   font-family: 'GothamPro-Bold', sans-serif;

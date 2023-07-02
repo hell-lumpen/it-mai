@@ -212,7 +212,7 @@ const HomePage = () => {
             variants={headingVariants}
             transition={{ duration: 1 }}
         >
-          Институт №8
+          Институт №8 - это IT
         </motion.h1>
         <motion.h1
             className="subtitle"
