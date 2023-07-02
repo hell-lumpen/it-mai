@@ -27,7 +27,7 @@ const AnimatedNumberComponent = ({ id, value, duration, description }) => {
                   />
               ) : 0}
             </div>
-            <div className="animated-number-description">&nbsp;&nbsp;{description}</div>
+            <div className="animated-number-description">{description}</div>
           </div>
         </div>
       </VisibilitySensor>

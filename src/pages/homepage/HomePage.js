@@ -261,7 +261,7 @@ const HomePage = () => {
           <AnimatedNumberComponent id={2} value={20} duration={3000} description={'компаний-партнеров'}/>
           <AnimatedNumberComponent id={3} value={6} duration={3000} description={'место по популярности по версии Табитуриент'}/>
           <AnimatedNumberComponent id={4} value={1} duration={3000} description={'робособака Дора'}/>
-          <AnimatedNumberComponent id={5} value={500} duration={3000} description={' квадратных метров IT-пространства'}/>
+          <AnimatedNumberComponent id={5} value={500} duration={3000} description={'квадратных метров IT-пространства'}/>
           <motion.div
               className="highlight-content"
               initial="hidden"

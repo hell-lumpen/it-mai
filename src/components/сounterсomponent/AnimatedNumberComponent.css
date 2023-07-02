@@ -8,7 +8,7 @@
 
 .animated-number-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     text-align: center;
 }
@@ -20,6 +20,7 @@
     background: linear-gradient(to right, #007ACD, #6ed2ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    padding-right: 50px;
 }
 
 .animated-number-description {
@@ -27,8 +28,11 @@
     font-size: 2rem;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .animated-number-content {
-        flex-direction: row;
+        flex-direction: column;
+    }
+    .animated-number-number {
+        padding-right: 0;
     }
 }
