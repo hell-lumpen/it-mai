@@ -17,7 +17,7 @@ const AnimatedNumberComponent = ({ id, value, duration, description }) => {
         <div id={id} className={`animated-number-container`}>
           <div className="animated-number-content">
             <div className="animated-number-number">
-              {isVisible && (
+              {isVisible ? (
                   <AnimatedNumber
                       value={value}
                       duration={duration}
@@ -25,7 +25,7 @@ const AnimatedNumberComponent = ({ id, value, duration, description }) => {
                       delay={500}
                       isVisible={true}
                   />
-              )}
+              ) : 0}
             </div>
             <div className="animated-number-description">&nbsp;&nbsp;{description}</div>
           </div>
