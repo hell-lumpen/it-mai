@@ -6,8 +6,10 @@ import {Helmet} from "react-helmet";
 import CarouselComponent from "../../components/carousel/CarouselComponent";
 import Marquee from "../../components/marquee/Marquee";
 import ContactsComponent from "../../components/ContactsComponent";
-import NumberCounter from "../../components/сounterсomponent/NumberCounter";
+import NumberCounter from "../../components/сounterсomponent/AnimatedNumberComponent";
 import { motion } from 'framer-motion';
+import NumberAnimation from "../../components/сounterсomponent/AnimatedNumberComponent";
+import AnimatedNumberComponent from "../../components/сounterсomponent/AnimatedNumberComponent";
 
 const HomePage = () => {
 
@@ -222,7 +224,7 @@ const HomePage = () => {
             variants={headingVariants}
             transition={{ duration: 0.3 }}
         >
-          Институт №8 - это IT
+          Институт №8 — это IT
         </motion.h1>
         <motion.h1
             className="subtitle"
@@ -244,7 +246,7 @@ const HomePage = () => {
           >
             Наши направления
           </motion.h2>
-          <Highlight data={highlightsBachelor} highlightWidth="480px" />
+          <Highlight data={highlightsBachelor} highlightWidth="550px" />
 
           <motion.h2
               className="section-title"
@@ -255,6 +257,11 @@ const HomePage = () => {
           >
             О нас
           </motion.h2>
+          <AnimatedNumberComponent id={1} value={250} duration={3000} description={'преподавателей'}/>
+          <AnimatedNumberComponent id={2} value={20} duration={3000} description={'компаний-партнеров'}/>
+          <AnimatedNumberComponent id={3} value={6} duration={3000} description={'место по популярности по версии Табитуриент'}/>
+          <AnimatedNumberComponent id={4} value={1} duration={3000} description={'робособака Дора'}/>
+          <AnimatedNumberComponent id={5} value={500} duration={3000} description={' квадратных метров IT-пространства'}/>
           <motion.div
               className="highlight-content"
               initial="hidden"

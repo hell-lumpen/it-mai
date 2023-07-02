@@ -1,0 +1,34 @@
+.animated-number-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.animated-number-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.animated-number-number {
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: 'GothamPro-Black', sans-serif;
+    background: linear-gradient(to right, #007ACD, #6ed2ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.animated-number-description {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+    .animated-number-content {
+        flex-direction: row;
+    }
+}

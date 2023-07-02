@@ -90,7 +90,7 @@ body {
 }
 
 .header.scrolled {
-  background-color: #1E1E1E;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 body {
@@ -111,12 +111,22 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 10px;
-  margin-top: 10px;
+  margin-top: 0;
+}
+
+.subtitle {
+  font-family: 'GothamPro-Black', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  margin-top: 0;
 }
 
 @media (max-width: 480px) {
   .main-title {
     font-size: 3.5rem;
+  }
+  .subtitle {
+    font-size: 2rem;
   }
 }
 

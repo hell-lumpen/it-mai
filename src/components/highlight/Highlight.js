@@ -41,6 +41,11 @@ const Highlight = ({ data, highlightWidth }) => {
             visible: { opacity: 1, y: 0 },
           };
 
+          const transition = {
+            duration: 0.3,
+            delay: index * 0.2, // Добавляем задержку на основе индекса элемента
+          };
+
           // Animate the highlight when it comes into view
           // eslint-disable-next-line react-hooks/rules-of-hooks
           useEffect(() => {
@@ -59,7 +64,7 @@ const Highlight = ({ data, highlightWidth }) => {
                 return (
                     <span
                         key={index}
-                        style={{ color: '#6ed2ff', fontWeight: 'bold', fontFamily: 'GothamPro-Bold, sans-serif'}}
+                        style={{ color: '#6ed2ff', fontFamily: 'GothamPro-Bold, sans-serif'}}
                         dangerouslySetInnerHTML={{ __html: part }}
                     />
                 );
@@ -81,6 +86,7 @@ const Highlight = ({ data, highlightWidth }) => {
                   initial="hidden"
                   animate={controls}
                   variants={variants}
+                  transition={transition} // Используем transition с задержкой
               >
                 <div className="highlight-content-h">
                   <h3 className="highlight-title">{title}</h3>
