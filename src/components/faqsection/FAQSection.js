@@ -36,7 +36,12 @@ const FAQSection = ({ faqs }) => {
                 {faq.question}
                 <span className="faq-arrow">{selectedFaq === index ? '▲' : '▼'}</span>
               </div>
-              {selectedFaq === index && <p className="faq-answer">{faq.answer}</p>}
+              {selectedFaq === index && (
+                  <p
+                      className="faq-answer"
+                      dangerouslySetInnerHTML={{ __html: faq.answer }}
+                  />
+              )}
             </motion.div>
         ))}
       </div>
