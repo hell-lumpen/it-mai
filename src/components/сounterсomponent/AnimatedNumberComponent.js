@@ -22,7 +22,7 @@ const AnimatedNumberComponent = ({ id, value, duration, description }) => {
                       value={value}
                       duration={duration}
                       formatValue={(value) => value.toFixed(0)}
-                      delay={500}
+                      delay={100}
                       isVisible={true}
                   />
               ) : 0}
